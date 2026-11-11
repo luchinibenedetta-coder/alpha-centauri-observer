@@ -94,7 +94,7 @@ for noise_ppm in (10, 15, 20):
     print(f"Noise {noise_ppm} ppm | Earth: S/N {snr_earth:.1f} per transit, {n_earth} transits needed | Moon: {n_moon} transits needed")
 
 # --- Apparent orbit of the Earth as seen from Alpha Centauri ---
-RA_DEG= 219.90206    #right ascension of lpha Centauri A, J2000
+RA_DEG= 219.90206    # right ascension of Alpha Centauri A, J2000
 DEC_DEG= -60.83399    # declination of Alpha Centauri A, J2000
 OBLIQUITY_DEG= 23.439281    # obliquity of the ecliptic, J2000
 
@@ -114,4 +114,22 @@ print(f"Ecliptic latitude of Alpha Centauri: {beta:.1f} deg")
 print(f"Apparent orbit of the Earth: {a_app:.3f}x{b_app:.3f} arcsec (b/a= {b_app/a_app:.2f})")
 
 transit_window_deg= math.degrees(R_SUN_KM/AU_KM)    # a transit needs |latitude| below this
-print(f"A transit needs |ltitude|<{transit_window_deg:.2f} deg -> transit seen from Alpha Centauri:{abs(beta)<transit_window_deg}")
+print(f"A transit needs |latitude|<{transit_window_deg:.2f} deg -> transit seen from Alpha Centauri:{abs(beta)<transit_window_deg}")
+
+# --- Proper motion of the Sun as seen from Alpha Centauri ---
+PM_RA_MAS_YR= -3619.9    # proper motion in right ascension (times cos dec), system barycentre (Kervella et al. 2017))
+PM_DEC_MAS_YR= 693.8    # proper motion in declination, system barycentre (Kervella et al. 2017)
+V_RADIAL_KMS= 22.232    # speed at which the system approaches the Sun, km/s (Kervella et al. 2017)
+KMS_PER_ARCSEC_YR_PC= 4.74047    # speed corresponding to 1 arcsec/yr at 1 pc, km/s 
+SECONDS_PER_YEAR= 3.15576e7    # seconds in a Julian year
+
+pm_arcsec_yr= math.hypot(PM_RA_MAS_YR, PM_DEC_MAS_YR)/1000    #total proper motion, arcsec/yr
+v_transverse= KMS_PER_ARCSEC_YR_PC*pm_arcsec_yr*D_PC    # total relative speed, km/s
+helix_pitch_au= v_total*SECONDS_PER_YEAR/AU_KM    # distance the Sun travels in one year, AU
+orbital_speed= 2*math.pi*a_app    # maximum apparent speed of the Earth on its orbit, arcsec/yr
+
+print(f"Proper motion: {pm_arcsec_yr:.3f} arcsec/yr")
+print(f"Transverse speed: {v_transverse:.1f} km/s | total relative speed:{v_total:.1f} km/s")
+print(f"Maximum apparent orbital speed of the Earth: {orbital_speed:.2f} arcsec/yr")
+print(f"Earth appears to move backwards at times (loops): {orbital_speed>pm_arcsec_yr}")
+print(f"Helix pitch: {helix_pitch_au:.1f} AU per year")
