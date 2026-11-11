@@ -136,7 +136,7 @@ print(f"Earth appears to move backwards at times (loops): {orbital_speed>pm_arcs
 print(f"Helix pitch: {helix_pitch_au:.1f} AU per year")
 
 # --- Vector tools to describe directions on the sky ---
-def unit_vector(ra_deg, dec_deg)
+def unit_vector(ra_deg, dec_deg):
     # Unit vector pointing towards a given right ascension and declination
     ra= math.radians(ra_deg)
     dec= math.radians(dec_deg)
@@ -144,6 +144,10 @@ def unit_vector(ra_deg, dec_deg)
 
 def dot(a,b):
     # Dot product: how much of one vector lies along the other
+    return a[0]*b[0] + a[1]*b[1] + a[2]*b[2]
+
+def cross(a,b):
+    # Cross product: a vector perpendicular to both a and b
     return (a[1]*b[2]-a[2]*b[1], a[2]*b[0]-a[0]*b[2], a[0]*b[1]-a[1]*b[0])
 
 def normalize(a):
@@ -162,3 +166,19 @@ print(f"Major axis . line of sight: {dot(major_axis, line_of_sight):.3f}")
 print(f"Minor axis . line of sight: {dot(minor_axis, line_of_sight):.3f}")
 print(f"Major axis . minor axis: {dot(major_axis, minor_axis):.3f}")
 print(f"Length of the minor axis: {math.sqrt(dot(minor_axis, minor_axis)):.3f}")
+
+# --- Drift of the Sun seen from Alpha Centauri, compared with the apparent orbit ---
+ra= math.radians(RA_DEG)
+dec= math.radians(DEC_DEG)
+east= (-math.sin(ra), math.cos(ra), 0.0)    # direction of increasing right ascension
+north= (-math.sin(dec)*math.cos(ra), -math.sin(dec)*math.sin(ra), math.cos(dec))    # direction of increasing declination
+
+# Seen from Alpha Centauri the Sun drifts opposite to the proper motion seen from the Sun (arcsec/yr)
+drift= tuple(-(PM_RA_MAS_YR*east[i])/1000 for i in range (3))
+drift_along= dot(drift, major_axis)    # component along the long axis, arcsec/yr
+drift_across= dot(drift, minor_axis)    # component along the short axis, arcsec/yr
+drift_angle= math.degrees(math.atan2(abs(drift_across), abs(drift_along)))
+
+print(f"Drift along the long axis: {abs(drift_along):.2f} arcsec/yr | across: {abs(drift_across):.2f} arcsec/yr")
+print(f"Angle between drift and long axis: {drift_angle:.1f} deg")
+print(f"Loops (exact condition, along the long axis): {orbital_speed>abs(drift_along)}")
