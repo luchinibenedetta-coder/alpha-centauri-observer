@@ -117,19 +117,48 @@ transit_window_deg= math.degrees(R_SUN_KM/AU_KM)    # a transit needs |latitude|
 print(f"A transit needs |latitude|<{transit_window_deg:.2f} deg -> transit seen from Alpha Centauri:{abs(beta)<transit_window_deg}")
 
 # --- Proper motion of the Sun as seen from Alpha Centauri ---
-PM_RA_MAS_YR= -3619.9    # proper motion in right ascension (times cos dec), system barycentre (Kervella et al. 2017))
+PM_RA_MAS_YR= -3619.9    # proper motion in right ascension (times cos dec), system barycentre (Kervella et al. 2017)
 PM_DEC_MAS_YR= 693.8    # proper motion in declination, system barycentre (Kervella et al. 2017)
-V_RADIAL_KMS= 22.232    # speed at which the system approaches the Sun, km/s (Kervella et al. 2017)
-KMS_PER_ARCSEC_YR_PC= 4.74047    # speed corresponding to 1 arcsec/yr at 1 pc, km/s 
+V_RADIAL_KMS= 22.332    # speed at which the system approaches the Sun, km/s (Kervella et al. 2017)
+KMS_PER_ARCSEC_YR_PC= 4.74047    # speed corresponding to 1 arcsec/yr at 1 pc, km/s
 SECONDS_PER_YEAR= 3.15576e7    # seconds in a Julian year
 
-pm_arcsec_yr= math.hypot(PM_RA_MAS_YR, PM_DEC_MAS_YR)/1000    #total proper motion, arcsec/yr
-v_transverse= KMS_PER_ARCSEC_YR_PC*pm_arcsec_yr*D_PC    # total relative speed, km/s
+pm_arcsec_yr= math.hypot(PM_RA_MAS_YR, PM_DEC_MAS_YR)/1000    # total proper motion, arcsec/yr
+v_transverse= KMS_PER_ARCSEC_YR_PC*pm_arcsec_yr*D_PC    # speed across the line of sight, km/s
+v_total= math.hypot(v_transverse, V_RADIAL_KMS)    # total relative speed, km/s
 helix_pitch_au= v_total*SECONDS_PER_YEAR/AU_KM    # distance the Sun travels in one year, AU
 orbital_speed= 2*math.pi*a_app    # maximum apparent speed of the Earth on its orbit, arcsec/yr
 
 print(f"Proper motion: {pm_arcsec_yr:.3f} arcsec/yr")
-print(f"Transverse speed: {v_transverse:.1f} km/s | total relative speed:{v_total:.1f} km/s")
+print(f"Transverse speed: {v_transverse:.1f} km/s | total relative speed: {v_total:.1f} km/s")
 print(f"Maximum apparent orbital speed of the Earth: {orbital_speed:.2f} arcsec/yr")
 print(f"Earth appears to move backwards at times (loops): {orbital_speed>pm_arcsec_yr}")
 print(f"Helix pitch: {helix_pitch_au:.1f} AU per year")
+
+# --- Vector tools to describe directions on the sky ---
+def unit_vector(ra_deg, dec_deg)
+    # Unit vector pointing towards a given right ascension and declination
+    ra= math.radians(ra_deg)
+    dec= math.radians(dec_deg)
+    return (math.cos(dec)*math.cos(ra), math.cos(dec)*math.sin(ra), math.sin(dec))
+
+def dot(a,b):
+    # Dot product: how much of one vector lies along the other
+    return (a[1]*b[2]-a[2]*b[1], a[2]*b[0]-a[0]*b[2], a[0]*b[1]-a[1]*b[0])
+
+def normalize(a):
+    # Same direction, length 1
+    length= math.sqrt(dot(a,a))
+    return (a[0]/length, a[1]/length, a[2]/length)
+
+# --- Axes of the apparent orbit of the Earth ---
+eps= math.radians (OBLIQUITY_DEG)
+line_of_sight= unit_vector(RA_DEG, DEC_DEG)    # from the Sun towards Alpha Centauri
+ecliptic_pole= (0.0, -math.sin(eps), math.cos(eps))    # north pole of the ecliptic, equatorial coordinates
+major_axis= normalize(cross(ecliptic_pole, line_of_sight))    #long axis of the apparent orbit
+minor_axis= cross(line_of_sight, major_axis)    # short axis, perpendicular on the sky
+
+print(f"Major axis . line of sight: {dot(major_axis, line_of_sight):.3f}")
+print(f"Minor axis . line of sight: {dot(minor_axis, line_of_sight):.3f}")
+print(f"Major axis . minor axis: {dot(major_axis, minor_axis):.3f}")
+print(f"Length of the minor axis: {math.sqrt(dot(minor_axis, minor_axis)):.3f}")
