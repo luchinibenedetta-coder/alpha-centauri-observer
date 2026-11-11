@@ -14,6 +14,8 @@ R_MOON_KM= 1737.4    # mean radius of the Moon in kilometers
 A_G_EARTH_LOW= 0.242    # Earth visual geometric albedo, recent estimate (arXiv:2507.22258)
 A_G_EARTH_HIGH= 0.367    # Earth visual geometric albedo, classical value (Allen's Astrophysical Quantities)
 A_G_MOON= 0.12    # Moon visual geometric albedo (approximate)
+R_SUN_KM = 695700.0    # nominal solar radius in kilometers (IAU 2015)
+GM_SUN_KM3_S2 = 1.32712440018e11    # nominal solar gravitational parameter,km^3/s^2 (IAU 2015)
 
 def angle_arcsec(size_au, d_pc):
     # Small-angle approximation: angle [arcsec] = length [AU] / distance [pc]
@@ -39,17 +41,38 @@ telescopes= {
 
 for name, (wavelength_m, diameter_m) in telescopes.items():
  resolution=rayleigh_arcsec(wavelength_m, diameter_m)
- print(f"{name}: {resolution * 1000:.1f} mas | separates Sun-Earth: {resolution < sun_earth} | separates Earth-Moon: {resolution < earth_moon}")
+ print(f"{name}: {resolution * 1000:.1f} mas | separates Sun-Earth: {resolution<sun_earth} | separates Earth-Moon: {resolution<earth_moon}")
 
 # --- Reflected-light contrast ---
 def contrast_full_phase(albedo, radius_km, orbit_km):
- # Planet-to-str flux ratio at full phase: A_g*(R/a)^2
- retun albedo*(radius_km/orbit_km)**2
+ # Planet-to-star flux ratio at full phase: A_g*(R/a)^2
+ return albedo*(radius_km/orbit_km)**2
 
 c_earth_low=contrast_full_phase(A_G_EARTH_LOW, R_EARTH_KM, AU_KM)
-c_earth_high=contrast_full_phase(A_G_EARTH_HIGH, R_EARTH_HIGH_KM, AU_KM)
+c_earth_high=contrast_full_phase(A_G_EARTH_HIGH, R_EARTH_KM, AU_KM)
 c_moon=contrast_full_phase(A_G_MOON, R_MOON_KM, AU_KM)
 
 print(f"Earth contrast: {c_earth_low:.1e} to {c_earth_high:.1e}")
 print(f"Moon contrast:  {c_moon:.1e}")
 print(f"The Sun is {1 / c_earth_high:.1e} to {1 / c_earth_low:.1e} times brighter than Earth")
+
+# --- Transit ---
+def transit_depth(r_planet_km,r_star_km):
+    # Fraction of starlight blocked: ratio of the two disk areas
+    return (r_planet_km/r_star_km)**2
+
+def circular_speed_kms(a_km):
+    # Circular orbit: gravity provides the centripetal force,v=sqrt(GM/a)
+    return math.sqrt(GM_SUN_KM3_S2/a_km)
+
+def transit_duration_h(r_planet_km,r_star_km,a_km):
+    # Central transit,first to fourth contact:the planet travels 2*(R_star + R_planet)
+    return 2*(r_star_km + r_planet_km)/circular_speed_kms(a_km)/3600
+
+depth_earth=transit_depth(R_EARTH_KM,R_SUN_KM)
+depth_moon=transit_depth(R_MOON_KM,R_SUN_KM)
+duration=transit_duration_h(R_EARTH_KM,R_SUN_KM,AU_KM)
+
+print(f"Earth transit depth:{depth_earth * 1e6:.1f} ppm")
+print(f"Moon transit depth:{depth_moon * 1e6:.1f} ppm")
+print(f"Transit duration:{duration:.1f} h")
