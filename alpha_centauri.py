@@ -174,7 +174,7 @@ east= (-math.sin(ra), math.cos(ra), 0.0)    # direction of increasing right asce
 north= (-math.sin(dec)*math.cos(ra), -math.sin(dec)*math.sin(ra), math.cos(dec))    # direction of increasing declination
 
 # Seen from Alpha Centauri the Sun drifts opposite to the proper motion seen from the Sun (arcsec/yr)
-drift= tuple(-(PM_RA_MAS_YR*east[i])/1000 for i in range (3))
+drift= tuple(-(PM_RA_MAS_YR*east[i]+PM_DEC_MAS_YR*north[i])/1000 for i in range(3))
 drift_along= dot(drift, major_axis)    # component along the long axis, arcsec/yr
 drift_across= dot(drift, minor_axis)    # component along the short axis, arcsec/yr
 drift_angle= math.degrees(math.atan2(abs(drift_across), abs(drift_along)))
