@@ -91,4 +91,27 @@ for noise_ppm in (10, 15, 20):
     snr_earth=depth_earth/noise
     n_earth=max(transits_needed(depth_earth, noise, SNR_TRESHOLD), MIN_TRANSITS)
     n_moon=transits_needed(depth_moon, noise, SNR_TRESHOLD)
-    print(f''Noise{noise_ppm}ppm|Earth:S/N{snr_earth:.1f} per transit, {n_earth} transits needed|Moon:{n:moon} transits needed")
+        print(f"Noise{noise_ppm}ppm|Earth:S/N{snr_earth:.1f}per transit, {n_earth} transits needed|Moon:{n_moon} transits needed")
+
+# --- Apparent orbit of the Earth as seen from Alpha Centauri ---
+RA_DEG= 219.90206    #right ascension of lpha Centauri A, J2000
+DEC_DEG= -60.83399    # declination of Alpha Centauri A, J2000
+OBLIQUITY_DEG= 23.439281    # obliquity of the ecliptic, J2000
+
+def ecliptic_latitude_deg(ra_deg, dec_deg, obliquity_deg):
+    # Equatorial to ecliptic latitude: sin(beta)=sin(dec)*cos(eps)-cos(dec)*sin(eps)*sin(ra)
+    ra= math.radians(ra_deg)
+    dec= math.radians(dec_deg)
+    eps= math.radians(obliquity_deg)
+    sin_beta= math.sin(dec)*math.cos(eps)-math.cos(dec)*math.sin(eps)*math.sin(ra)
+    return math.degrees(math.asin(sin_beta))
+
+beta= ecliptic_latitude_deg(RA_DEG, DEC_DEG, OBLIQUITY_DEG)
+a_app= angle_arcsec(1.0, D_PC)    # semi-major axis of the apparent orbit, arcsec
+b_app= a_app*abs(math.sin(math.radians(beta)))    # semi-minor axis, arcsec
+
+print(f"Ecliptic latitude of Alpha Centauri: {beta:.1f} deg")
+print(f"Apparent orbit of the Earth: {a_app:.3f}x{b_app:.3f} arcsec (b/a= {b_app/a_app:.2f})")
+
+transit_window_deg= math.derees(R_SUN_KM/AU_KM)    # a transit needs|latitude|below this
+print(f"A transit needs|latitude|<{transit_window_deg:.2f} deg -> transit seen from Alpha Centauri: {abs(beta)<transit_window_deg}")
