@@ -1,5 +1,6 @@
 # Angular scales of the Sun-Earth-Moon system as seen from Alpha Centauri.
 import math
+import numpy as np
 
 # --- Distance to the Alpha Centauri AB system ---
 PARALLAX_MAS=747.17    # parallax in milliarcseconds (Kervella et al. 2017)
@@ -182,3 +183,20 @@ drift_angle= math.degrees(math.atan2(abs(drift_across), abs(drift_along)))
 print(f"Drift along the long axis: {abs(drift_along):.2f} arcsec/yr | across: {abs(drift_across):.2f} arcsec/yr")
 print(f"Angle between drift and long axis: {drift_angle:.1f} deg")
 print(f"Loops (exact condition, along the long axis): {orbital_speed>abs(drift_along)}")
+
+# --- Apparent trajectory of the Earth over a few years ---
+YEARS= 3    # length of the simulated observation, years
+N_POINTS= 1500    # number of points along the path
+
+t= np.linspace(0, YEARS, N_POINTS)    # time, years
+omega= 2*math.pi    # angular frequency of the Earth's orbit, rad/yr
+sun_x= drift_along*t    # position of the Sun along the long axis, arcsec
+sun_y= drift_across*t    # position of the Sun along the short axis, arcsec
+earth_x= sun_x + a_app*np.cos(omega*t)    # Earth = Sun drift+apparent orbit, arcsec
+earth_y= sun_y + b_app*np.sin(omega*t)
+
+velocity_x= np.gradient(earth_x, t)    # apparent velocity along the long axis, arcsec/yr
+backward_fraction= np.mean(velocity_x*np.sign(drift_along) < 0)    # fraction of time the Earth moves against the drift
+
+print(f"Earth path over {YEARS} years: x from {earth_x.min():.2f} to {earth_x.max():.2f} arcsec, y from {earth_y.min():.2f} to {earth_y.max():.2f} arcsec")
+print(f"Fraction of time the Earth moves backwards along the drift: {backward_fraction:.0%}")
