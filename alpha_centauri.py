@@ -1,6 +1,9 @@
 # Angular scales of the Sun-Earth-Moon system as seen from Alpha Centauri.
 import math
+import os
 import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.animation import FuncAnimation
 
 # --- Distance to the Alpha Centauri AB system ---
 PARALLAX_MAS=747.17    # parallax in milliarcseconds (Kervella et al. 2017)
@@ -200,3 +203,37 @@ backward_fraction= np.mean(velocity_x*np.sign(drift_along) < 0)    # fraction of
 
 print(f"Earth path over {YEARS} years: x from {earth_x.min():.2f} to {earth_x.max():.2f} arcsec, y from {earth_y.min():.2f} to {earth_y.max():.2f} arcsec")
 print(f"Fraction of time the Earth moves backwards along the drift: {backward_fraction:.0%}")
+
+# --- Animation: apparent trajectory of the Earth ---
+os.makedirs("figures", exist_ok=True)    # create the output folder if it does not exist
+SUN_COLOR, SUN_EDGE, EARTH_COLOR= "gold", "darkorange", "tab:blue"
+STEP= 10    # use one point every STEP, to keep the GIF light
+FPS= 25    # frames per second of the GIF
+
+fig, ax= plt.subplots(figsize=(10, 4))
+ax.set_aspect("equal")
+ax.set_xlim(-1, 12.5)
+ax.set_ylim(-0.8, 3.4)
+ax.set_xlabel("arcsec, along the long axis")
+ax.set_ylabel("arcsec, along the short axis")
+ax.set_title("Apparent trajectory of the Earth seen from Alpha Centauri (symbols enlarged)", fontsize=10)
+
+sun_path,= ax.plot([], [], "--", color=SUN_EDGE, lw=1, label="Sun")
+earth_path,= ax.plot([], [], color=EARTH_COLOR, lw=1.2, label="Earth")
+sun_dot,= ax.plot([], [], "o", color=SUN_COLOR, mec=SUN_EDGE, ms=12, zorder=3)
+earth_dot,= ax.plot([], [], "o", color=EARTH_COLOR, ms=5, zorder=3)
+time_text= ax.text(0.02, 0.92, "", transform=ax.transAxes)
+ax.legend(frameon=False, loc="upper right", fontsize=9)
+
+def update(i):
+    # Draw everything from the start up to point i
+    sun_path.set_data(sun_x[:i + 1], sun_y[:i + 1])
+    earth_path.set_data(earth_x[:i + 1], earth_y[:i + 1])
+    sun_dot.set_data([sun_x[i]], [sun_y[i]])
+    earth_dot.set_data([earth_x[i]], [earth_y[i]])
+    time_text.set_text(f"t = {t[i]:.2f} yr")
+    return sun_path, earth_path, sun_dot, earth_dot, time_text
+
+animation= FuncAnimation(fig, update, frames=range(0, N_POINTS, STEP), interval=1000/FPS, blit=True)
+animation.save("figures/apparent_trajectory.gif", writer="pillow", fps=FPS)
+print("Saved figures/apparent_trajectory.gif")
