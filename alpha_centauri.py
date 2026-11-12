@@ -1,6 +1,5 @@
 # Angular scales of the Sun-Earth-Moon system as seen from Alpha Centauri.
 import math
-import os
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
@@ -213,7 +212,6 @@ print(f"Earth path over {YEARS} years: x from {earth_x.min():.2f} to {earth_x.ma
 print(f"Fraction of time the Earth moves backwards along the drift: {backward_fraction:.0%}")
 
 # --- Animation: apparent trajectory of the Earth ---
-os.makedirs("figures", exist_ok=True)    # create the output folder if it does not exist
 SUN_COLOR, SUN_EDGE, EARTH_COLOR= "gold", "darkorange", "tab:blue"
 STEP= 10    # use one point every STEP, to keep the GIF light
 FPS= 25    # frames per second of the GIF
@@ -244,5 +242,5 @@ def update(i):
     return sun_path, earth_path, sun_dot, earth_dot, time_text
 
 animation= FuncAnimation(fig, update, frames=range(0, N_POINTS, STEP), interval=1000/FPS, blit=True)
-animation.save("figures/apparent_trajectory.gif", writer="pillow", fps=FPS)
-print("Saved figures/apparent_trajectory.gif")
+animation.save("apparent_trajectory.gif", writer="pillow", fps=FPS)
+print("Saved apparent_trajectory.gif")
