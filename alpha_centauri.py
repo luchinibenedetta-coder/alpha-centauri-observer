@@ -203,7 +203,7 @@ omega= 2*math.pi    # angular frequency of the Earth's orbit, rad/yr
 sun_x= drift_along*t    # position of the Sun along the long axis, arcsec
 sun_y= drift_across*t    # position of the Sun along the short axis, arcsec
 earth_x= sun_x + a_app*np.cos(omega*t)    # Earth = Sun drift + apparent orbit, arcsec
-earth_y= sun_y + b_app*np.sin(omega*t)
+earth_y= sun_y - b_app*np.sin(omega*t)    # minus sign: the Earth moves clockwise on the sky
 
 velocity_x= np.gradient(earth_x, t)    # apparent velocity along the long axis, arcsec/yr
 backward_fraction= np.mean(velocity_x*np.sign(drift_along) < 0)    # fraction of time the Earth moves against the drift
