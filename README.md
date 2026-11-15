@@ -10,7 +10,10 @@ Overall, the possibility of observing the Earth from Alpha Centauri cannot be an
 
 ## System definition and physical parameters
 Before asking what an observer could see, the observer and the observed object have to be defined. The observer was placed in the Alpha Centauri system, and the object of study is the Earth-Moon pair orbiting the Sun. The distance of Alpha Centauri is about 2.76x10^5 AU, while the two main stars, A and B, are separated by only a few tens of AU. For every order-of-magnitude estimate below, the exact position of the observer inside the system is therefore irrelevant, and the values for the barycentre of the system were used throughout. 
-The parallax of the barycentre is π=747.17 +/- 0.61 mas (Kervella 2017), ehich gave a distance d=1/π=1.338 pc, or 4.364 light-years. The proper motion is μ_α=-3619.9 +/- 3.9 mas/yr in right ascension (the cos(δ) factor was already included) and μ_δ=+693.8 +/- 3.9 mas/yr in declination, and the radial velocity is -22.332 +/- 0.005 km/s, the minus sign meaning that the system is approaching the Sun. For Alpha Centauri A alone, the distance is about 1.332 pc, a difference of roughly 0.5% which does not change any conclusion. The sky position was taken to be that of Alpha Centauri A (J2000): α=14h 39m 36.494s=219.902° and δ=-60° 50' 02.37"=-60.834°. It is needed later to compute the ecliptic latitude of the observer.
+
+The parallax of the barycentre is π=747.17 +/- 0.61 mas (Kervella 2017), ehich gave a distance d=1/π=1.338 pc, or 4.364 light-years. The proper motion is μ_α=-3619.9 +/- 3.9 mas/yr in right ascension (the cos(δ) factor was already included) and μ_δ=+693.8 +/- 3.9 mas/yr in declination, and the radial velocity is -22.332 +/- 0.005 km/s, the minus sign meaning that the system is approaching the Sun. 
+For Alpha Centauri A alone, the distance is about 1.332 pc, a difference of roughly 0.5% which does not change any conclusion. The sky position was taken to be that of Alpha Centauri A (J2000): α=14h 39m 36.494s=219.902° and δ=-60° 50' 02.37"=-60.834°. It is needed later to compute the ecliptic latitude of the observer.
+
 For the Sun the nominal values R_Sun=695 700 km and G*M_Sun=1.32712 x 10^20 m^3 s^-2 were used (IAU 2015). The mean radii R_Earth=6371 km and R_Moon=1737.4 km, and a mean Earth-Moon distance of 348 000 km (NASA Moon Fact Sheet). The reflectivity of a body is described by the geometric albedo  A_g, the ratio between the brightness of the body at full phase and that of a flat Lambertian disc of the same size. For the Moon A_g=0.12 was adopted. For the Earth two values were used: 0.242 (Robinson 2026) and 0.367 (Cox 2000). They bracketed the uncertainty, and the conclusions did not depend on which one was chosen. 
 
 The basic tool for converting a physical size into what the observer sees was the small-angle relation. By definition of the parsec, an object of size s at a distance d subtends an angle 
@@ -25,7 +28,7 @@ Applying it gives the angular scale of the whole problem. The Sun-Earth separati
 |---|---|---|
 | Sun-Earth distance | 1 AU | 747 mas |
 | Earth-Moon distance (mean) | 384 400 km | 1.92 mas |
-| Sun (diameter) | 1.39 x 10^6 km | 6.95 mas |
+| Sun (diameter) | 1.39x10^6 km | 6.95 mas |
 | Earth (diameter) | 12 742 km | 0.064 mas |
 | Moon (diameter) | 3475 km | 0.017 mas |
 
@@ -74,7 +77,9 @@ V=abs(cos(π*B*s/λ))
 which first vanishes at s=λ/(2*B). This is the conventional resolution of an interferometer, and it is the reason why long baselines are the natural route towards the Moon. Resolution, however, is only a necessary condition. The Sun-Earth pair is resolved with a wide margin and yet the Earth cannot be seen, because the light of the Sun spilled over it.
 
 ## Planet-star contrast and reflected light
-A planet shines almost entirely by reflected starlight, and a simple model shows how little of it reaches the observer. The planet was replaced by a Lambertian disc of radius R and unit albedo, facing both the star and the observer. At the orbital distance a the disc intercepts the flux F_a= L/(4π a^2) over an area π R^2 and it re-emits that energy isotropically with a radiance F_a/π. At a distance d the flux received from the disc is  F_a R^2/d^2, while the direct flux from the star is L/(4π d^2). The ratio of the two is (R/a)^2, and does not depend on d. A real planet is not described by two corrections: the geometric albedo A_g, and a phase function Φ(α) normalised to Φ(0)=1, where α is the phase angle, that is the angle-Sun-planet-observer. The contrast, defined as the ratio between planet flux and star flux is
+A planet shines almost entirely by reflected starlight, and a simple model shows how little of it reaches the observer. The planet was replaced by a Lambertian disc of radius R and unit albedo, facing both the star and the observer. At the orbital distance a the disc intercepts the flux F_a= L/(4π a^2) over an area π R^2 and it re-emits that energy isotropically with a radiance F_a/π. At a distance d the flux received from the disc is  F_a R^2/d^2, while the direct flux from the star is L/(4π d^2). 
+
+The ratio of the two is (R/a)^2, and does not depend on d. A real planet is not described by two corrections: the geometric albedo A_g, and a phase function Φ(α) normalised to Φ(0)=1, where α is the phase angle, that is the angle-Sun-planet-observer. The contrast, defined as the ratio between planet flux and star flux is
 
 ```
 c=F_planet/F_star=A_g*(R/a)^2*Φ(α)
@@ -120,13 +125,15 @@ The last piece of the contrast problem is the light of the star itself, diffract
 
 Evaluated at the position of the Earth (747 mas) for an ideal circular aperture with no obstruction and no atmosphere, the halo is still bigger than the planet in every case considered.
 
-| Telescope | x' at 747 mas | Halo | Halo / c_Earth |
+| Telescope | x' at 747 mas | Halo | Halo/c_Earth |
 |---|---|---|---|
-| HST, 550 nm | 15.8 | 1.0 x 10^-5 | ~ 2 x 10^4 |
-| ELT, 550 nm | 257 | 2.4 x 10^-9 | ~ 5 |
-| ELT, 1.6 μm | 88 | 6.0 x 10^-8 | ~ 10^2 |
+| HST, 550 nm | 15.8 | 1.0 x 10^-5 | ~2x10^4 |
+| ELT, 550 nm | 257 | 2.4 x 10^-9 | 5 |
+| ELT, 1.6 μm | 88 | 6.0 x 10^-8 | ~10^2 |
 
-Even a perfect large telescope therefore needs a coronagraph, an instrument that suppresses the starlight before it reaches the detector. In real instruments the limit comes from speckles, obstructions and wavefront errors rather than from ideal diffracrion. To place the Earth in context, a review of adaprive optics for high-contrast imaging (arXiv:1701.00836) quotes performances of order 10^-5 at o.5" and below 10^-6 at a few resolution elements for ground-based systems, which I treat as an order of magnitude. The Roman Coronagraph Instrument has a 10^-7 flux-ratio detection limit (5σ, single band) at 575 nm and 6-9 λ/D for stars of V ~ 5. Imaging an Earth twin requires 10^-10 or better, which is the requirement of the HabEx study (arXiv:1809.09674), and the Habitable Worlds Observatory is expected to need a similar level.
+Even a perfect large telescope therefore needs a coronagraph, an instrument that suppresses the starlight before it reaches the detector. In real instruments the limit comes from speckles, obstructions and wavefront errors rather than from ideal diffracrion. To place the Earth in context, a review of adaprive optics for high-contrast imaging (arXiv:1701.00836) quotes performances of order 10^-5 at o.5" and below 10^-6 at a few resolution elements for ground-based systems, which I treat as an order of magnitude. 
+
+The Roman Coronagraph Instrument has a 10^-7 flux-ratio detection limit (5σ, single band) at 575 nm and 6-9 λ/D for stars of V ~ 5. Imaging an Earth twin requires 10^-10 or better, which is the requirement of the HabEx study (arXiv:1809.09674), and the Habitable Worlds Observatory is expected to need a similar level.
 
 ## Photon flux and instrumental limitations
 A different question is whether the planet sends enough photons to be measured at all. The number of photons detected from a source of apparent magnitude m is
@@ -136,7 +143,7 @@ N=F0*10^(-0.4*m)*A*ε*t
 ```
 where F0~9x10^5 photons s^-1 cm^-2 is the flux of a zero-magnitude star in the V band (approximate), A the collecting area, ε = 0.3 an assumed overall efficiency, and t the exposure time. For a source with no background S/N=sqrt(N). The magnitude of the planet follows from its contrast through m=m_Sun-2.5*log10(c).
 
-| Object | m | HST (4.5 m^2) | ELT (~ 980 m^2) |
+| Object | m | HST(4.5 m^2) | ELT (~980 m^2) |
 |---|---|---|---|
 | Sun | 0.46 | 7.9 x 10^9 photons/s | 1.7 x 10^12 photons/s |
 | Earth, full phase | 23.6 | 4.3 photons/s | 940 photons/s |
@@ -149,7 +156,7 @@ A few photons per second reach HST from the Earth, and hundreds reach the ELT, s
 |---|---|---|
 | Resolution | satisfied | not satisfied (any single telescope) |
 | Photons | satisfied | satisfied |
-| Contrast (~ 5 x 10^-10, ~ 2 x 10^-11) | not satisfied today | not satisfied even for planned instruments |
+| Contrast (~5x10^-10, ~2x10^-11) | not satisfied today | not satisfied even for planned instruments |
 
 ## Orbital geometry and the meaning of alignment
 The problem states that Earth and Alpha Centauri are "aligned". Taken literally the statement is empty: two points always lie on a line. The word acquires physical content only when the Sun is included, and there are two meaningful readings. The first is that the Sun, the Earth and the observer are collinear, which happens at a single instant per orbit with α=180° in a transit and a α=0° in an occultation. The second, more useful, is that the observer lies close to the orbital plane of the Earth, so that the Earth can cross the solar disc. The second reading was the one adopted from there on.
@@ -219,3 +226,54 @@ The script adopts S/N>=7 and at least 3 transits, so that the periodicity can be
 The Earth is detected in the minimum of three transits, because its signal is already above the noise in a single one, while the Moon needs hundreds, that is hundreds of years. The convention is conservative: for a 13 h transit white noise is reduced by a factor sqrt(2) compared with 6.5 h, which would roughly halve the numbers for the Moon.
 
 A transit gives the radius ratio R_p/R_Sun=sqrt(δ)=0.0092, the period P=1 yr, and, from Kepler's third law a^3=G*M*P^2/(4π^2), the orbital radius a=1AU, hence an estimate of the equilibrium temperature. It does not give the mass of the planet an image: the Earth is *detected*, but not *seen*.
+
+## Indirect detection methods
+Two further methods detect a planet without seeing it, both based on the fact that star and planet orbit their common barycentre. The star describes an orbit of radius r=a*m/(M+m) and, by conservation of momentum, moves with speed v_stat=v_planet*m/M. This produces a periodic Doppler shift of the stellar lines (radial velocity method) and a periodic displacement of the star on the sky (astrometry). Both scale with the mass ratio, which is tiny for the Earth.
+
+| Planet | m/M | Radial velocity | Astrometric displacement at 1.338 pc |
+|---|---|---|---|
+| Earth | 3.0 x 10^-6 | 0.09 m/s | 2.2 μas |
+| Jupiter (5.2 AU) | 9.5 x 10^-4 | 12.5 m/s | 3.7 mas |
+
+An Earth twin induces 0.09 m/s and 2.2 μas, both far below current capabilities. Jupiter would be easily found, since 12.5 m/s and 3.7 mas are routine for modern specrographs and astrometry. Over its period of 11.86 yr it would also produce a transit of depth 1.06% (R_Jupiter=71492 km) lasting about 30 h, though with a probability of only R_Sun/a_Jupiter=0.09%. The Sun-Jupiter barycentre lies just outside the Sun, at 1.07 R_Sun from its centre. In practice, an observer at Alpha Centauri would learn of the existance of the SOlar System through Jupiter before detecting the Earth.
+
+## The Earth-Moon system
+The Moon is the hardest object of the problem for three reasons that add up: it is very close to the Earth (1.92 mas), it is small, and it is dark. Each method fails in a different way.
+
+The most direct idea is a lunar transit. Its depth is (R_Moon / R_Sun)^2 = 6.2 ppm, thirteen times shallower than the Earth's, with the same duration and a displacement from the Earth's transit of up to +/-a_Moon/v=3.6 h. Hundreds of transits are needed.
+
+A subtler method uses the fact that Earth and Moon revolve around their own barycentre, located at 
+
+```
+r_b=a_Moon*m_Moon/(m_Earth+m_Moon)~4670 km (0.73 R_Earth)
+```
+
+from the centre of the Earth. As the Earth swings back and forth along its orbit with this amplitude, the time of each transit shifts bt at most
+
+```
+Δt_max=r_b/v=157s~2.6 min
+```
+
+This is the transit timing variation (TTV). The difficulty is the precision with which the time of a single transit can be measured. A standard approximation (Carter 2008) gives 
+
+```
+σ_t~(T/Q)*sqrt(τ/(2*T))
+```
+
+where Q is the total signal-to-noise ratio of the transit. With T=780 min,  τ = 7 min and Q=6-12, σ_t is 4.4-8.8 min, larger than the 2.6 min signal. Detecting a sinusoid of amplitude A at S/N=5 then requires
+
+
+```
+N ~ 2 * (5 * σ_t / A)^2 ~ 140-570 transits
+```
+
+Sampling a 27.32 d oscillation once a year also causes aliasing 8(365.25/27.32=13.37 cycles per year). The transit duration variation (TDV) is smaller still, about +/- 20 s.
+
+Finally, mutual events, in which the Moon passes in front of or behind the Earth, could reveal it. The lunar orbit is inclined by 5.145° to the ecliptic, so the Moon rises at most h_max=a_Moon*sin(5.145°)=34470 km above the orbital plane of the Earth, and an occultation requires h<R_Earth+R_Moon=8108 km. This happens only when the angle Δ between the line of the nodes and the observer satisfies Δ<arcsin(8108/34470)=13.6°. The line of nodes precesses with a period of 18.6 years, so the windows last an estimated 1.4 years and repeat about every 9.3 years. DUring an event the effect is at most (R_Moon/R_Earth)^2=7.4% of the light reflected by the Earth, which is only about 4x10^-11 of the flux of the Sun.
+
+| Method | Signal | Required | Verdict |
+|---|---|---|---|
+| Moon transit | 6.2 ppm | 126-504 transits | not feasible |
+| Earth TTV | 157 s | ~ 140-570 transits | not feasible |
+| Reflected light | 1.6 x 10^-11 | contrast 10^-11 at 1.92 mas | not feasible today |
+| Mutual events | ~ 4 x 10^-11 | windows of 1.4 yr | not feasible today |
