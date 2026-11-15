@@ -53,7 +53,7 @@ With an absolute V maginitude M_V=4.83 for the Sun, the Sun seen from Alpha Cent
 The first requirement for seeing two objects as separate is that the telescope can tell them apart. Because of diffraction, a point source observed through a circular aperture of diameter D does not form a point in the image, but the Airy pattern
 
 ```
-I(θ)/I0 = [2*J1(x)/x ^2        with   x=π*D*θ/λ
+I(θ)/I0 = [2*J1(x)/x ^2]        with   x=π*D*θ/λ
 ```
 
 where J1 is the Bessel function of the first kind. The central peak was surrounded by faint rings, and the first dark dings falls at x=3.8317. Two equally bright sources are conventionally considered resolved when the peak of one falls on the first zero of the other, which gives the Rayleigh criterion
@@ -198,3 +198,35 @@ abs(β)<=α<=180°-abs(β)      ->      42.6°<=α<=137.4°
 The Earth is therefore never at full phase and never at new phase. Its best illumination occurs at α=42.6°, where the illuminated fraction is k=(1+cos(α))/2=0.87 and the Lambert phase function is  Φ=0.78, at the minimum separation of 0.506". This gives a Lambert contrast of about 4.2x10^-10 for A_g=0.30, slightly lower than the full-phase value, which is why the latter is an upper limit.
 
 How long would such alignment last? The relative proper motion of the two systems changes the direction of the observer, as seen from the Sun, by μ=3.686"/yr. The window is about 1918" wide, so crossing it takes at least about 250 years (a lower bound, since only the component of μ perpendicular to the ecliptic matters). The configuration is extremely rare and very short-lived on human time scale.
+
+## The Earth transit
+If the orbit is seen exactly edge-on, the Earth can be detected without any angular resolution and without a coronagraph: the Sun is observed as a whole and its dimming is measured. At the centre of the transit, neglecting limb darkening, the fractional loss of light is the ratio of the areas of the two discs:
+
+```
+δ=(R_Earth/R_Sun)^2 =(6371/695700)^2=8.4x10^-5=84 ppm
+```
+
+Limb darkening makes a central transit somewhat deeper, by a wavelenghth-dependent 20-30%, so 84 ppm is a conservative figure. The orbital speed, the total duration T and the ingress or egress time τ are
+```
+v=sqrt(G*M_Sun/a)=29.78 km/s
+T~2*R_Sun/v=13.1 h
+τ~2*R_Earth/v=428s~7 min
+```
+
+The real limit is the noise of the star. If N transits are combined and σ is the noise on a 6.5h time scale, then S/N=(δ/σ)*sqrt(N), and the number of traits needed for a given S/N is
+
+```
+N=[(S/N)*σ/δ]^2
+```
+
+The script adopts S/N>=7 and at least 3 transits, so that the periodicity can be confirmed. The noise was assumed to be 10-20 ppm, typical of solar-type stars on the time scale of a transit (Koch 2010). It is dominated by the intrinsic variability of the star and not by photon noise, which is why a larger telescope does not simply solve the problem. The resulting numbers of transits, for the Earth and for the Moon (whose depth is only 6.2 ppm) are:
+
+| σ (ppm/6.5 h) | Earth | Moon (δ=6.2 ppm) |
+|---|---|---|
+| 10 | 3 | 126 |
+| 15 | 3 | 284 |
+| 20 | 3 | 504 |
+
+The Earth is detected in the minimum of three transits, because its signal is already above the noise in a single one, while the Moon needs hundreds, that is hundreds of years. The convention is conservative: for a 13 h transit white noise is reduced by a factor sqrt(2) compared with 6.5 h, which would roughly halve the numbers for the Moon.
+
+A transit gives the radius ratio R_p/R_Sun=sqrt(δ)=0.0092, the period P=1 yr, and, from Kepler's third law a^3=G*M*P^2/(4π^2), the orbital radius a=1AU, hence an estimate of the equilibrium temperature. It does not give the mass of the planet an image: the Earth is *detected*, but not *seen*.
