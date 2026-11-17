@@ -383,3 +383,39 @@ That condition is far from being satisfied. In practice the limits are systemati
 The second route is reflected-light spectroscopy, which requires direct imaging. It needs the full contrast of the earlier sections (~10^-10) but only a modest spectral resolution. An ELT collects about 420 photons per second from the Earth, and HST about 2 photons per second at m~24.5, with an assumed efficiency of 0.3. Unlike the transit, this method works along the whole orbit, preferably at gibbous phase.
 
 Other clues exist, and some cautions apply. The rotation of the Earth (24 h) and the seasons (1 yr) modulate the reflected light and could reveal continents, oceans and vegetation cycles. Moreover, oxygen can also be produced without life, and its absence does not prove that life is absent: on the Earth itself O2 rose to significant levels only about 2.4 Gyr ago, long after life appeared.
+
+## Scientific discussion and limitations
+All the results above rest on a set of assumptions, listed here to show how far each conclusion can be trusted.
+
+| Assumption | Value | Effect of a change |
+|---|---|---|
+| Observer position | Alpha Centauri barycentre values | A and B differ by tens of AU out of 2.76x10^5 AU; the distance of A alone differs by 0.5% |
+| Albedo | Earth 0.242-0.367, Moon 0.12 | the contrast is proportional to A_g; a factor 2 does not change the verdict (three orders of magnitude) |
+| Phase function | Lambert | the real Earth deviates from Lambert's law; the effect was not quantified here |
+| Stellar noise | 10-20 ppm per 6.5 h | order of magnitude; at 5 ppm the Earth needs 1-2 transits, the Moon remains out of reach |
+| Instrument contrasts | 10^-5 to 10^-6; 10^-7; 10^-10 | orders of magnitude; requirements and design goals, not measured performance |
+| Orbits | circular | the Earth's eccentricity (0.017) changes the figures by a few percent |
+| Relative motion | uniform and rectilinear | gravitational acceleration is negligible over a few years |
+
+Further points: the script computes the contrast at full phase, which is an upper limit, since the real Alpha Centauri never sees the Earth at full phase. The noise convention for the number of transits, with σ referred to 6.5 h and no factor sqrt(2) for the 13 h duration, is conservative. The windows of the mutual events are an estimate, not a precise calculation.
+
+**Reproducibility.** The script `alpha_centauri.py` prints all the quantities discussed above and saves the animation `apparent_trajectory.gif`. It needs three libraries:
+
+```bash
+pip install numpy matplotlib pillow
+python alpha_centauri.py
+```
+
+## Conclusions
+The question is whether an observer at Alpha Centauri, with instruments similar to ours, could see the Earth and the Moon, and what trajectory the Earth would seem to follow. The answer is not a single yes or no, and it can be summarised for each part of the problem.
+
+The Earth is resolvable, since its separation from the Sun, 747 mas, is much larger than the resolution of HST, JWST or the ELT. It is not detectable with today's imaging, because its contrast, about 4,7x10^-10, is far below the 10^-5 to 10^-6 reached from the ground and the 10^-7 designed for Roman, and close to the 10^-10 needed for imaging an Earth twin.
+
+The Moon cannot be seen. Its separation of 1.92 mas is not resolved even by the ELT, and its contrast of 1.6x10^-11 is beyond the reach of any planned instrument.
+The word "alignment" is physically meaningful only as a condition on the observer lying in the orbital plane, within 0.27° of it, which has a probability of 0.47%. The real Alpha Centauri has an ecliptic latitude of -42.6% and never sees a transit.
+
+In the hypothetical edge-on-case the Earthis detected in about three transits (84 ppn, 13.1 h), while the Moon needs 126-504 transits, or at least 140 through the transit timing variations.
+
+The apparent trajectory of the Earth is an ellipse of 0.747"x0.506" (axis ratio 0.68), covered clockwise in one year. Combined with the drift of the Sun at 3.686"/yr it becomes a trochoid with loops (the Earth moves backwards for 22% of the time along the long axis), and in space it is a helix of pitch 6.8 AU.
+
+Finally, life on Earth is detectable in principle through O2+CH4 and O3. In practice it requires a coronagraphic space telescope for reflected light or, for transmission spectroscopy, many transits observed with an ELR, which the real geometry does not allow.
