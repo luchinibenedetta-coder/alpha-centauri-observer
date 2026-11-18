@@ -19,9 +19,8 @@ For the Sun the nominal values R_Sun=695 700 km and G*M_Sun=1.32712 x 10^20 m^3 
 The basic tool for converting a physical size into what the observer sees was the small-angle relation. By definition of the parsec, an object of size s at a distance d subtends an angle 
 
 $$
-\theta[\cos]=\frac{s[Au]}{d[pc]}
+\theta[\arcsec]=\frac{s[AU]}{d[pc]}
 $$
-
 
 Applying it gives the angular scale of the whole problem. The Sun-Earth separation of 1 AU appears as 747 mas, which is not tiny by the standards of modern telescopes. The Earth-Moon distance shrinks to only 1.92 mas. The Sun has an angular diameter of 6.95 mas, the Earth of 0.064 mas and the Moon of 0.017 mas, so both planetary bodies are point sources for any conceivable instrument.
 
@@ -35,25 +34,28 @@ Applying it gives the angular scale of the whole problem. The Sun-Earth separati
 
 Brightness is expressed in magnitudes, with
 
-```
+$$
 m1-m2=-2.5*log10(F1/F2)
+$$
+
+$$
 m=M+5*log10(d/10 pc)
-```
+$$
 
 With an absolute V magnitude M_V=4.83 for the Sun, the Sun seen from Alpha Centauri has an apparent magnitude m_Sun=0.46, about as bright as Alpha Centauri A appears to us. This is the glare against which the Earth has to be detected.
 
 ## Angular resolution
 The first requirement for seeing two objects as separate is that the telescope can tell them apart. Because of diffraction, a point source observed through a circular aperture of diameter D does not form a point in the image, but the Airy pattern
 
-```
+$$
 I(θ)/I0 = [2*J1(x)/x]^2        with   x=π*D*θ/λ
-```
+$$
 
 where J1 is the Bessel function of the first kind. The central peak is surrounded by faint rings, and the first dark ring falls at x=3.8317. Two equally bright sources are conventionally considered resolved when the peak of one falls on the first zero of the other, which gives the Rayleigh criterion
 
-```
+$$
 θ_R=1.22*λ/D
-```
+$$
 
 Three representative instruments were compared. The Sun-Earth separation of 747 mas is within reach of all of them, whereas the Earth-Moon separation of 1.92 mas is within the reach of none.
 
@@ -65,15 +67,15 @@ Three representative instruments were compared. The Sun-Earth separation of 747 
 
 To resolve the Earth-Moon pair with a single mirror, the required diameter is
 
-```
+$$
 D>=1.22*λ/(1.92 mas)~72m at 550 nm      (~210m at 1.6μm)
-```
+$$
 
 which exceeds the size of any telescope that exists or is under construction. An interferometer does better: for two equally bright sources of separation s observed with a baseline B, the fringe visibility is
 
-```
+$$
 V=abs(cos(π*B*s/λ))
-```
+$$
 
 which first vanishes at s=λ/(2*B). This is the conventional resolution of an interferometer, and it is the reason why long baselines are the natural route towards the Moon. Resolution, however, is only a necessary condition. The Sun-Earth pair is resolved with a wide margin and yet the Earth cannot be seen, because the light of the Sun spills over it.
 
@@ -82,11 +84,13 @@ A planet shines almost entirely by reflected starlight, and a simple model shows
 
 The ratio of the two is (R/a)^2, and does not depend on d. A real planet is described by two corrections: the geometric albedo A_g, and a phase function Φ(α) normalised to Φ(0)=1, where α is the phase angle, that is the angle Sun-planet-observer. The contrast, defined as the ratio between planet flux and star flux is
 
-```
+$$
 c=F_planet/F_star=A_g*(R/a)^2*Φ(α)
+$$
 
+$$
 Φ_Lambert(α)=[sin(α)+(π - α)*cos(α)]/π
-```
+$$
 
 The Lambert phase function is an idealisation, and the real Earth deviates from it by an amount that was not quantified here. The table shows how quickly the reflected light drops as the planet moves away from full phase.
 
@@ -96,33 +100,33 @@ The Lambert phase function is an idealisation, and the real Earth deviates from 
 
 At full phase (Φ = 1), and with (R_Earth / a)^2=1.81x10^-9, the Earth has a contrast of 4.4x10^-10 for A_g=0.242 and 6.7x10^-10 for A_g=0.367. The Moon, with a smaller radius and a lower albedo, reaches only
 
-```
+$$
 c_Moon=0.12*(R_Moon/a)^2=1.6x10^-11
-```
+$$
 
 The Sun therefore outshines the Earth by a factor between 1.5 and 2.3 billion, and the Moon by about 6x10^10. These are upper limits, because the Earth is never at full phase for the real Alpha Centauri.
 
 Reflected light is not the only option. The Earth also emits its own thermal radiation, and in the infrared the contrast is considerably better. With a Bond albedo A_B=0.3 and a solar constant S=1361 W/m^2, the equilibrium temperature is
 
-```
-T_eq=[(1-A_B)*S/(4 * σ)]^(1/4)=255 K
-```
+$$
+T_eq=[(1-A_B)*S/(4*σ)]^(1/4)=255 K
+$$
 
 At 10 μm the ratio of the Planck functions of the Earth and of the Sun is (e^x_Sun-1)/(e^x_Earth-1), with x=14388/(λ[μm]*T[K]), so that
 
-```
+$$
 c(10 μm) ~ (R_Earth/R_Sun)^2 * (e^0.249-1)/(e^5.65-1)
          ~ 8.4x10^-5*1.0x10^-3
          ~ 8x10^-8
-```
+$$
 
 This is about two orders of magnitude better than in the visible. The price is a coarser resolution, which scales with λ, but even the ELT at 10 μm (64.5 mas) is far below the 747 mas of the Sun-Earth separation. The estimate uses T_eq as if it were a brightness temperature; a real brightness temperature in an atmospheric window would change the result by a factor of order 2.
 
 The last piece of the contrast problem is the light of the star itself, diffracted by the telescope. Far from the centre of the pattern, for x'=θ/(λ/D)>> 1, one can use the asymptotic form of the Bessel function, J1(x)~sqrt(2/(π*x))*cos(x-3π/4), and average over the oscillations, which gives a smooth halo
 
-```
+$$
 <I/I0>~4/(π^4*x'^3)
-```
+$$
 
 Evaluated at the position of the Earth (747 mas) for an ideal circular aperture with no obstruction and no atmosphere, the halo is still brighter than the planet in every case considered.
 
@@ -139,9 +143,9 @@ The Roman Coronagraph Instrument has a 10^-7 flux-ratio detection limit (5σ, si
 ## Photon flux and instrumental limitations
 A different question is whether the planet sends enough photons to be measured at all. The number of photons detected from a source of apparent magnitude m is
 
-```
+$$
 N=F0*10^(-0.4*m)*A*ε*t
-```
+$$
 
 where F0~9x10^5 photons s^-1 cm^-2 is the flux of a zero-magnitude star in the V band (approximate), A the collecting area, ε = 0.3 an assumed overall efficiency, and t the exposure time. For a source with no background S/N=sqrt(N). The magnitude of the planet follows from its contrast through m=m_Sun-2.5*log10(c).
 
@@ -165,33 +169,35 @@ The problem states that Earth and Alpha Centauri are "aligned". Taken literally 
 
 Let i be the inclination, the angle between the normal to the orbit and the line of sight. For a circular orbit of radius a, the impact parameter in solar radii is
 
-```
+$$
 b =(a/R_Sun)*cos(i)
-```
+$$
 
 and a transit takes place if b<1 (more precisely b<1+R_Earth/R_Sun if grazing transits are included). Since a/R_Sun=215, this requires
 
-```
+$$
 cos(i)<R_Sun/a=4.65x10^-3
+$$
+
 ->  the angle (i - 90°), in absolute value, must be smaller than 0.27° = 959 arcsec
-```
 
 The observer has to lie within a band of about half a degree around the ecliptic plane. For an observer in a random direction the geometric probability is p=R_Sun/a=0.47%, about one chance in 215.
 
 Alpha Centauri is not in a random direction, and its position is known. Its ecliptic latitude β follows from the equatorial coordinates (α, δ) and the obliquity ε = 23.4393°:
 
-```
+$$
 sin(β)=sin(δ)*cos(ε)-cos(δ)*sin(ε)*sin(α)
+$$
+
 --> β=-42.6°
-```
 
 This is about 160 half-widths away from the transit window, so the real Alpha Centauri never sees the Earth cross the Sun. The edge-on geometry is a hypothetical scenario, which was studied separately because it is the only one in which transit techniques work.
 
 The same geometry fixes the phase angle at which the Earth is seen. For a circular orbit with orbital longitude φ, cos(α)=-cos(φ)*cos(β), and the apparent separation from the Sun is s=a*sqrt(1-cos(α)^2)=a*sin(α), for any inclination. The inclination only limits the range of α:
 
-```
+$$
 abs(β)<=α<=180°-abs(β)      ->      42.6°<=α<=137.4°
-```
+$$
 
 The Earth is therefore never at full phase and never at new phase. Its best illumination occurs at α=42.6°, where the illuminated fraction is k=(1+cos(α))/2=0.87 and the Lambert phase function is Φ=0.78, at the minimum separation of 0.506". This gives a Lambert contrast of about 4.2x10^-10 for A_g=0.30, slightly lower than the full-phase value, which is why the latter is an upper limit.
 
@@ -200,23 +206,23 @@ How long would such alignment last? The relative proper motion of the two system
 ## The Earth transit
 If the orbit is seen exactly edge-on, the Earth can be detected without any angular resolution and without a coronagraph: the Sun is observed as a whole and its dimming is measured. At the centre of the transit, neglecting limb darkening, the fractional loss of light is the ratio of the areas of the two discs:
 
-```
+$$
 δ=(R_Earth/R_Sun)^2 =(6371/695700)^2=8.4x10^-5=84 ppm
-```
+$$
 
 Limb darkening makes a central transit somewhat deeper, by a wavelength-dependent 20-30%, so 84 ppm is a conservative figure. The orbital speed, the total duration T and the ingress or egress time τ are
 
-```
+$$
 v=sqrt(G*M_Sun/a)=29.78 km/s
 T~2*R_Sun/v=13.1 h
 τ~2*R_Earth/v=428 s~7 min
-```
+$$
 
 The real limit is the noise of the star. If N transits are combined and σ is the noise on a 6.5 h time scale, then S/N=(δ/σ)*sqrt(N), and the number of transits needed for a given S/N is
 
-```
+$$
 N=[(S/N)*σ/δ]^2
-```
+$$
 
 The script adopts S/N>=7 and at least 3 transits, so that the periodicity can be confirmed. The noise was assumed to be 10-20 ppm, typical of solar-type stars on the time scale of a transit (Koch 2010). It is dominated by the intrinsic variability of the star and not by photon noise, which is why a larger telescope does not simply solve the problem. The resulting numbers of transits, for the Earth and for the Moon (whose depth is only 6.2 ppm) are:
 
@@ -247,28 +253,28 @@ The most direct idea is a lunar transit. Its depth is (R_Moon / R_Sun)^2 = 6.2 p
 
 A subtler method uses the fact that Earth and Moon revolve around their own barycentre, located at 
 
-```
+$$
 r_b=a_Moon*m_Moon/(m_Earth+m_Moon)~4670 km (0.73 R_Earth)
-```
+$$
 
 from the centre of the Earth. As the Earth swings back and forth along its orbit with this amplitude, the time of each transit shifts by at most
 
-```
+$$
 Δt_max=r_b/v=157s~2.6 min
-```
+$$
 
 This is the transit timing variation (TTV). The difficulty is the precision with which the time of a single transit can be measured. A standard approximation (Carter 2008) gives 
 
-```
+$$
 σ_t~(T/Q)*sqrt(τ/(2*T))
-```
+$$
 
 where Q is the total signal-to-noise ratio of the transit. With T=780 min,  τ = 7 min and Q=6-12, σ_t is 4.4-8.8 min, larger than the 2.6 min signal. Detecting a sinusoid of amplitude A at S/N=5 then requires
 
 
-```
+$$
 N ~ 2 * (5 * σ_t / A)^2 ~ 140-570 transits
-```
+$$
 
 Sampling a 27.32 d oscillation once a year also causes aliasing (365.25/27.32=13.37 cycles per year). The transit duration variation (TDV) is smaller still, about +/- 20 s.
 
@@ -313,36 +319,36 @@ The second half of the question asks what path the Earth seems to follow. The an
 
 First, the orbit alone. A circle of radius a seen from an ecliptic latitude β is projected onto the plane of the sky as an ellipse. With ω=2π per year, and the axes chosen along the long and short axis of the ellipse, the position of the Earth relative to the Sun is
 
-```
+$$
 x(t)=a_app*cos(ω*t)
 y(t)=-b_app*sin(ω*t)
 
 a_app=1 AU/d=0.747"
 b_app=a_app*abs(sin(β))=0.506"
-```
+$$
 
 The ellipse has an axis ratio b/a=0.68 and is covered once a year. The minus sign in y fixes the sense of rotation: on these axes the motion is clockwise, as the script confirms numerically by projecting a counter-clockwise orbit about the ecliptic pole onto the sky axes». In the ideal edge-on case β=0 the ellipse collapses into a segment of length 2*a_app=1.49", along which the Earth oscillates back and forth. In the real geometry the Earth always stays between 0.506" and 0.747" from the Sun, so there is neither a transit nor an occultation.
 
 Second, the relative motion of the two stellar systems. The total proper motion is 
 
-```
+$$
 μ=sqrt(μ_α^2+μ_δ^2)=3.686"/yr
-```
+$$
 
 which corresponds to a tangential velocity v_t=4.74047*μ*d=23.4 km/s. Combined with the radial velocity v_r=22.3 km/s, the total velocity is v_tot=sqrt(v_t^2+v_r^2)=32.3 km/s. From Alpha Centauri the Sun drifts across the sky at 3.686" per year, 4.9 times the size of the apparent orbit, and this is the dominant effect on long time scales.
 
 Third, the two motions were combined. In the frame of the apparent ellipse, the drift has components μ_x=3.58"/yr along the long axis and μ_y=0.87"/yr along the short one, at an angle of 13.6° from the long axis. The path of the Earth is a trochoid:
 
-```
+$$
 x(t)=μ_x*t+a_app*cos(ω*t)
 y(t)=μ_y*t-b_app*sin(ω*t)
-```
+$$
 
 The shape depends on which of the two motions is faster. Differentiating, dx/dt=μ_x-a_app*ω*sin(ω*t), so the velocity along the long axis changes sign whenever the orbital speed a_app*ω=4.69"/yr exceeds the drift speed μ_x=3.58"/yr, which is the case here. In those intervals the Earth appears to move backwards and the path forms loops. The fraction of the time spent in retrograde motion is
 
-```
+$$
 f=(1/π)*arccos(μ_x/(a_app*ω))=22%
-```
+$$
 
 This fraction depends on the axis along which it is measured. Measured along the direction of the drift itself, the amplitude of the apparent orbital velocity is 2π*sqrt(a^2*cos(γ)^2+b^2*sin(γ)^2)=4.62"/yr, which exceeds μ, with γ=13.6°, and the fraction becomes 20.6%. Both values are correct and differ only in the definition of "backwards". The visual effect, shown in the animation below, is a series of loops stretched along the direction of the drift.
 
@@ -350,9 +356,9 @@ This fraction depends on the axis along which it is measured. Measured along the
 
 The apparent path is the projection of a real three-dimensional motion. In the frame of the Alpha Centauri system the Earth follows a helix around the straight path of the Sun. The pitch of the helix is the distance travelled by the Sun in one year,
 
-```
+$$
 p=v_tot*1 yr=32.3 km/s*3.156x10^7 s=6.8 AU
-```
+$$
 
 The orbit lies in the ecliptic, and the velocity of the Sun makes an angle ψ=70.0° with the ecliptic pole. The cross-section of the helix in the plane perpendicular to the velocity is therefore not a circle but an ellipse with semi-axes 1 AU and abs(cos(ψ))AU=0.34 AU.
 
@@ -363,17 +369,17 @@ Finding a planet is not the same as finding life on it: a spectrum is needed, in
 
 There are two ways to obtain a spectrum. The first, transmission spectroscopy, seeds a transit. During the transit the tartlight grazing the planet crosses a thin ring of atmosphere, and the gases leave their imprint on it. In an isothermal atmosphere the density decays as e^(-h/H), with scale height
 
-```
+$$
 H=k*T/(μ*m_H*g)
  =(1.38x10^-23*250)/(29*1.66x10^-27*9.8)
  ~7.3 km        (8.4 km at 288 K)
-```
+$$
 
 where μ=29 is here the mean molecular weight of air. If an absorbing gas makes the planet look larger by an effective height Δh, the extra friction of starlight blocked is the ratio between the area of the ring and that of the stellar disc:
 
-```
+$$
 ΔF/F=2π*R_Earth*Δh/(π*R_Sun^2)=2*R_Earth*Δh/R_Sun^2=0.0263 ppm*Δh[km]
-```
+$$
 
 For Δh equal to one scale height (8 km) the signal is 0.21 ppm. For the strongest O2 absorption, whose effective height is about 27 km (Bétrémieux 2013), it is about 0.7 ppm. Refraction in the lower atmosphere further prevents the deepest layers from being probed.
 
