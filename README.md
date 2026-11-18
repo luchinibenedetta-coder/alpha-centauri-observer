@@ -19,9 +19,7 @@ For the Sun the nominal values R_Sun=695 700 km and G*M_Sun=1.32712 x 10^20 m^3 
 The basic tool for converting a physical size into what the observer sees was the small-angle relation. By definition of the parsec, an object of size s at a distance d subtends an angle 
 
 ```
-$$
-\theta[\cos]=\frac{s[Au]}{d[pc]}
-$$
+$\theta[\cos]=\frac{s[Au]}{d[pc]}$
 ```
 
 Applying it gives the angular scale of the whole problem. The Sun-Earth separation of 1 AU appears as 747 mas, which is not tiny by the standards of modern telescopes. The Earth-Moon distance shrinks to only 1.92 mas. The Sun has an angular diameter of 6.95 mas, the Earth of 0.064 mas and the Moon of 0.017 mas, so both planetary bodies are point sources for any conceivable instrument.
