@@ -419,7 +419,3 @@ In the hypothetical edge-on-case the Earthis detected in about three transits (8
 The apparent trajectory of the Earth is an ellipse of 0.747"x0.506" (axis ratio 0.68), covered clockwise in one year. Combined with the drift of the Sun at 3.686"/yr it becomes a trochoid with loops (the Earth moves backwards for 22% of the time along the long axis), and in space it is a helix of pitch 6.8 AU.
 
 Finally, life on Earth is detectable in principle through O2+CH4 and O3. In practice it requires a coronagraphic space telescope for reflected light or, for transmission spectroscopy, many transits observed with an ELR, which the real geometry does not allow.
-
-$$
-\frac{n!}{k!(n-k)!} = \binom{n}{k}
-$$
