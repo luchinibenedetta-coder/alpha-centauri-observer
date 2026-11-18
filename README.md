@@ -19,9 +19,7 @@ For the Sun the nominal values R_Sun=695 700 km and G*M_Sun=1.32712 x 10^20 m^3 
 The basic tool for converting a physical size into what the observer sees was the small-angle relation. By definition of the parsec, an object of size s at a distance d subtends an angle 
 
 
-$$
-\theta[\arcsec]=\frac{s[Au]}{d[pc]}
-$$
+$\theta[\arcsec]=\frac{s[Au]}{d[pc]}$
 
 $$
 θ[arcsec]=s[AU]/d[pc]
