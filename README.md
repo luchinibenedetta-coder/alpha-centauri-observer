@@ -23,6 +23,9 @@ $$
 \theta[\arcsec]=\frac{s[Au]}{d[pc]}
 $$
 
+$$
+θ[arcsec]=s[AU]/d[pc]
+$$
 
 Applying it gives the angular scale of the whole problem. The Sun-Earth separation of 1 AU appears as 747 mas, which is not tiny by the standards of modern telescopes. The Earth-Moon distance shrinks to only 1.92 mas. The Sun has an angular diameter of 6.95 mas, the Earth of 0.064 mas and the Moon of 0.017 mas, so both planetary bodies are point sources for any conceivable instrument.
 
