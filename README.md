@@ -9,10 +9,10 @@ Another objective is to reconstruct the Earth's apparent motion, considering bot
 Overall, the possibility of observing the Earth from Alpha Centauri cannot be answered with a simple yes or no. It depends on what is meant by observation, on the geometry of the system, on the physical properties of the observed bodies, and on the instruments available. Direct imaging, transit photometry, astrometric measurements, and atmospheric spectroscopy provide different types of information and are affected by different limitations.
 
 ## System definition and physical parameters
-Before asking what an observer could see, the observer and the observed object have to be defined. The observer was placed in the Alpha Centauri system, and the object of study is the Earth-Moon pair orbiting the Sun. The distance of Alpha Centauri is about $2.76\times10^5\, \mathrm{AU}$, while the two main stars, A and B, are separated by only a few tens of AU. For every order-of-magnitude estimate below, the exact position of the observer inside the system is therefore irrelevant, and the values for the barycentre of the system were used throughout. 
+Before asking what an observer could see, the observer and the observed object have to be defined. The observer was placed in the Alpha Centauri system, and the object of study is the Earth-Moon pair orbiting the Sun. The distance of Alpha Centauri is about $2.76\times10^5\,\mathrm{AU}$, while the two main stars, A and B, are separated by only a few tens of AU. For every order-of-magnitude estimate below, the exact position of the observer inside the system is therefore irrelevant, and the values for the barycentre of the system were used throughout. 
 
-The parallax of the barycentre is $pi=747.17\pm0.61\, \mathrm{mas}$ (Kervella 2017), which gave a distance $\displaystyle d=\frac{1} {\pi}=1.338\, \mathrm{pc}$, or $4.364\, \mathrm{ly}$. The proper motion is $\mu_\alpha=-3619.9\pm3.9\, \mathrm{mas\,yr^{-1}}$ in right ascension (the cos(δ) factor was already included) and $\mu_\delta=+693.8\pm3.9\, \mathrm{mas\,yr^{-1}}$ in declination, and the radial velocity is $-22.332\pm0.005\, \mathrm{km\,s^{-a}}$, the minus sign meaning that the system is approaching the Sun. 
-For Alpha Centauri A alone, the distance is about $1.332\, \mathrm{pc}$, a difference of roughly $0.5%$, which does not change any conclusion. The sky position was taken to be that of Alpha Centauri A (J2000): $\alpha=14^{\mathrm h}\,39^{\mathrm m}\,36.494^{\mathrm s}=219.902^\circ$ and $\delta=-60^\circ\,50'\,02.37''=-60.834^\circ$. It is needed later to compute the ecliptic latitude of the observer.
+The parallax of the barycentre is $\pi=747.17\pm0.61\,\mathrm{mas}$ (Kervella 2017), which gave a distance $\displaystyle d=\frac{1} {\pi}=1.338\,\mathrm{pc}$, or $4.364\,\mathrm{ly}$. The proper motion is $\mu_\alpha=-3619.9\pm3.9\,\mathrm{mas\,yr^{-1}}$ in right ascension (the cos(δ) factor was already included) and $\mu_\delta=+693.8\pm3.9\,\mathrm{mas\,yr^{-1}}$ in declination, and the radial velocity is $-22.332\pm0.005\,\mathrm{km\,s^{-a}}$, the minus sign meaning that the system is approaching the Sun. 
+For Alpha Centauri A alone, the distance is about $1.332\,\mathrm{pc}$, a difference of roughly $0.5%$, which does not change any conclusion. The sky position was taken to be that of Alpha Centauri A (J2000): $\alpha=14^{\mathrm h}\,39^{\mathrm m}\,36.494^{\mathrm{s}=219.902^\circ$ and $\delta=-60^\circ\,50'\,02.37''=-60.834^\circ$. It is needed later to compute the ecliptic latitude of the observer.
 
 For the Sun the nominal values $R_{\odot}=695\,700\,\mathrm{km}$ and $GM_{\odot}=1.32712\times10^{20}\,\mathrm{m^3\,s^{-2}}$ were used (IAU 2015). The mean radii are $R_{\oplus}=6371\,\mathrm{km}$ and $R_{\mathrm{Moon}}=1737.4\,\mathrm{km}$, and a mean Earth-Moon distance of $384\,400\,\mathrm{km}$ (NASA Moon Fact Sheet). The reflectivity of a body is described by the geometric albedo $A_g$, the ratio between the brightness of the body at full phase and that of a flat Lambertian disc of the same size. For the Moon $A_g=0.12$ was adopted. For the Earth two values were used: $0.242$ (Robinson 2026) and $0.367$ (Cox 2000). They bracketed the uncertainty, and the conclusions did not depend on which one was chosen. 
 
@@ -57,7 +57,7 @@ Three representative instruments were compared. The Sun-Earth separation of $747
 
 To resolve the Earth-Moon pair with a single mirror, the required diameter is
 
-$$D\geq\frac{1.22\lambda}{1.92\,\mathrm{mas}}$$     ($~210\, \mathrm{m}$ at {1.6\, \mathrm{μm}$)
+$$D\geq\frac{1.22\lambda}{1.92\,\mathrm{mas}}$$     ($~210\, \mathrm{m}$ at {$1.6\, \mathrm{μm}$)
 
 which exceeds the size of any telescope that exists or is under construction. An interferometer does better: for two equally bright sources of separation $s$ observed with a baseline $B$, the fringe visibility is
 
@@ -157,7 +157,7 @@ This is about 160 half-widths away from the transit window, so the real Alpha Ce
 
 The same geometry fixes the phase angle at which the Earth is seen. For a circular orbit with orbital longitude $\phi\, $$\cos\alpha=-\cos\phi\cos\beta$$, and the apparent separation from the Sun is $$s=a\sqrt{1-\cos^2\alpha}=a\sin\alpha$$, for any inclination. The inclination only limits the range of $alpha\$:
 
-$$|\beta|\leq\alpha\leq180^\circ-|\beta|$$      ->      $$42.6^\circ\leq\alpha\leq137.4^\circ$$
+$$|\beta|\leq\alpha\leq180^\circ-|\beta|$$            $$ --> 42.6^\circ\leq\alpha\leq137.4^\circ$$
 
 The Earth is therefore never at full phase and never at new phase. Its best illumination occurs at α=42.6°, where the illuminated fraction is $k=\frac{1+\cos\alpha}{2}$ and the Lambert phase function is $\Phi=0.78$, at the minimum separation of $0.506"$. This gives a Lambert contrast of about 4.2x10^-10 for $A_g=0.30$, slightly lower than the full-phase value, which is why the latter is an upper limit.
 
@@ -247,86 +247,73 @@ The second claim is that albedo and reflected light reveal the Moon. In principl
 | Earth reflected light (full phase) | $\sim5\times10^{-4}\,\mathrm{ppm}$ |
 | Moon reflected light (full phase) | $1.6\times10^{-5}\,\mathrm{ppm}$ |
 
-against a noise of $10$–$20\,\mathrm{ppm}$. The reflected light of the Moon is six orders of magnitude below the noise, and that of the Earth about four, so total-light photometry cannot isolate it. Only direct imaging, with a contrast of 10^-11 at 1.92 mas, could separate the Moon from the Earth, and that is out of reach.
+against a noise of $10$–$20\,\mathrm{ppm}$. The reflected light of the Moon is six orders of magnitude below the noise, and that of the Earth about four, so total-light photometry cannot isolate it. Only direct imaging, with a contrast of $10^{-11}$ at $1.92\,\mathrm{mas}$, could separate the Moon from the Earth, and that is out of reach.
 
-The third claim is that the Earth should be observed when it is best illuminated. The illuminated fraction is k=(1+cos(α))/2 and the separation from the Sun is s=a*sin(α), so a well illuminated planet (α->0°) is also close to the Sun (separation->0), and the two requirements work against each other. During a transit, at α=180°, the Earth shows its night side, and the signal is the *shadow* of the planet on the star, not reflected light.
+The third claim is that the Earth should be observed when it is best illuminated. The illuminated fraction is $$k=\frac{1+\cos\alpha}{2}$$ and the separation from the Sun is $$s0a\sin\alpha$$, so a well illuminated planet ($\alpha\to0^\circ$) is also close to the Sun ($\mathrm{sepatation}\to0$), and the two requirements work against each other. During a transit, at $\alpha=180^\circ$, the Earth shows its night side, and the signal is the *shadow* of the planet on the star, not reflected light.
 
-| α | 30° | 60° | 90° | 120° | 150° |
+| $\alpha$ | $30^\circ$ | $60^\circ$ | $90^\circ$ | $120^\circ$ | $150^\circ$ |
 |---|---|---|---|---|---|
-| Separation s=a*sin(α)(a = 0.747") | 0.37" | 0.65" | 0.75" | 0.65" | 0.37" |
-| Illuminated fraction k | 93% | 75% | 50% | 25% | 7% |
-| Φ_Lambert | 0.88 | 0.61 | 0.32 | 0.110 | 0.015 |
+| Separation $s=a\sin\alpha$ ($a=0.747"$) | $0.37"$ | $0.65"$ | $0.75"$ | $0.65"$ | $0.37"$ |
+| Illuminated fraction k | $93\%$ | $75\%$ | $50\%$ | $25\%$ | $7\%$ |
+| $\Phi_{\mathrm{Lambert}}$ | 0.88 | 0.61 | 0.32 | 0.110 | 0.015 |
 
-For reflected-light imaging the best compromise is a gibbous phase (α~45°-60°, k~85-75%) at a separation of 0.53-0.65", large enough to be reached by a coronagraph. So the first claim is confirmed for the Earth and refuted for the Moon, the second is correct in principle but not feasible with total-light photometry, and the third is refuted as stated.
+For reflected-light imaging the best compromise is a gibbous phase ($\alpha\sim45^\circ$–$60^\circ$) at a separation of $0.53$–$0.65''$, large enough to be reached by a coronagraph. So the first claim is confirmed for the Earth and refuted for the Moon, the second is correct in principle but not feasible with total-light photometry, and the third is refuted as stated.
 
 ## The apparent trajectory of the Earth
 The second half of the question asks what path the Earth seems to follow. The answer was built in three steps, each adding one ingredient.
 
-First, the orbit alone. A circle of radius a seen from an ecliptic latitude β is projected onto the plane of the sky as an ellipse. With ω=2π per year, and the axes chosen along the long and short axis of the ellipse, the position of the Earth relative to the Sun is
+First, the orbit alone. A circle of radius a seen from an ecliptic latitude β is projected onto the plane of the sky as an ellipse. With $\omega=2\pi\,\mathrm{rad\,yr^{-1}}$ per year, and the axes chosen along the long and short axis of the ellipse, the position of the Earth relative to the Sun is
 
-$$
-x(t)=a_app*cos(ω*t)
-y(t)=-b_app*sin(ω*t)
+$$x(t)=a_{\mathrm{app}}\cos(\omega t)$$
+$$y(t)=-b_{\mathrm{app}}\sin(\omega t)$$
 
-a_app=1 AU/d=0.747"
-b_app=a_app*abs(sin(β))=0.506"
-$$
+$$a_{\mathrm{app}}=\frac{a}{d}=0.747''$$
+$$b_{\mathrm{app}}=a_{\mathrm{app}}|\sin\beta|=0.506''$$
 
-The ellipse has an axis ratio b/a=0.68 and is covered once a year. The minus sign in y fixes the sense of rotation: on these axes the motion is clockwise, as the script confirms numerically by projecting a counter-clockwise orbit about the ecliptic pole onto the sky axes». In the ideal edge-on case β=0 the ellipse collapses into a segment of length 2*a_app=1.49", along which the Earth oscillates back and forth. In the real geometry the Earth always stays between 0.506" and 0.747" from the Sun, so there is neither a transit nor an occultation.
+The ellipse has an axis ratio $\frac{b_{\mathrm{app}}}{a_{\mathrm{app}}}=0.68$ and is covered once a year. The minus sign in y fixes the sense of rotation: on these axes the motion is clockwise, as the script confirms numerically by projecting a counter-clockwise orbit about the ecliptic pole onto the sky axes». In the ideal edge-on case $\beta=0$$ the ellipse collapses into a segment of length $2a_{\mathrm{app}}=1.49''$, along which the Earth oscillates back and forth. In the real geometry the Earth always stays between $0.506"$ and $0.747"$ from the Sun, so there is neither a transit nor an occultation.
 
 Second, the relative motion of the two stellar systems. The total proper motion is 
 
-$$
-μ=sqrt(μ_α^2+μ_δ^2)=3.686"/yr
-$$
+$$\mu=\sqrt{\mu_\alpha^2+\mu_\delta^2}=3.686\,\mathrm{arcsec\,yr^{-1}}$$
 
-which corresponds to a tangential velocity v_t=4.74047*μ*d=23.4 km/s. Combined with the radial velocity v_r=22.3 km/s, the total velocity is v_tot=sqrt(v_t^2+v_r^2)=32.3 km/s. From Alpha Centauri the Sun drifts across the sky at 3.686" per year, 4.9 times the size of the apparent orbit, and this is the dominant effect on long time scales.
+which corresponds to a tangential velocity $$v_t=4.74047\,\mu d=23.4\,\mathrm{km\,s^{-1}}$$. Combined with the radial velocity v_r=22.3 km/s, the total velocity is $$v_{\mathrm{tot}}=\sqrt{v_t^2+v_r^2}=32.3\,\mathrm{km\,s^{-1}}$$. From Alpha Centauri the Sun drifts across the sky at 3.686" per year, 4.9 times the size of the apparent orbit, and this is the dominant effect on long time scales.
 
-Third, the two motions were combined. In the frame of the apparent ellipse, the drift has components μ_x=3.58"/yr along the long axis and μ_y=0.87"/yr along the short one, at an angle of 13.6° from the long axis. The path of the Earth is a trochoid:
+Third, the two motions were combined. In the frame of the apparent ellipse, the drift has components $\mu_x=3.58\,\mathrm{arcsec\,yr^{-1}}$ along the long axis and $\mu_y=0.87\,\mathrm{arcsec\,yr^{-1}}$ along the short one, at an angle of $13.6\circ$ from the long axis. The path of the Earth is a trochoid:
 
-$$
-x(t)=μ_x*t+a_app*cos(ω*t)
-y(t)=μ_y*t-b_app*sin(ω*t)
-$$
+$$x(t)=\mu_xt+a_{\mathrm{app}}\cos(\omega t)$$
+$$y(t)=\mu_yt-b_{\mathrm{app}}\sin(\omega t)$$
 
-The shape depends on which of the two motions is faster. Differentiating, dx/dt=μ_x-a_app*ω*sin(ω*t), so the velocity along the long axis changes sign whenever the orbital speed a_app*ω=4.69"/yr exceeds the drift speed μ_x=3.58"/yr, which is the case here. In those intervals the Earth appears to move backwards and the path forms loops. The fraction of the time spent in retrograde motion is
+The shape depends on which of the two motions is faster. Differentiating, $$\frac{dx}{dt}=\mu_x-a_{\mathrm{app}}\omega\sin(\omega t)$$, so the velocity along the long axis changes sign whenever the orbital speed $a_{\mathrm{app}}\omega=4.69\,\mathrm{arcsec\,yr^{-1}}$ exceeds the drift speed $\mu_x=3.58\,\mathrm{arcsec\,yr^{-1}}$, which is the case here. In those intervals the Earth appears to move backwards and the path forms loops. The fraction of the time spent in retrograde motion is
 
-$$
-f=(1/π)*arccos(μ_x/(a_app*ω))=22%
-$$
+$$f=\frac{1}{\pi}\arccos\left(\frac{\mu_x}{a_{\mathrm{app}}\omega}\right)=22\%$$
 
-This fraction depends on the axis along which it is measured. Measured along the direction of the drift itself, the amplitude of the apparent orbital velocity is 2π*sqrt(a^2*cos(γ)^2+b^2*sin(γ)^2)=4.62"/yr, which exceeds μ, with γ=13.6°, and the fraction becomes 20.6%. Both values are correct and differ only in the definition of "backwards". The visual effect, shown in the animation below, is a series of loops stretched along the direction of the drift.
+This fraction depends on the axis along which it is measured. Measured along the direction of the drift itself, the amplitude of the apparent orbital velocity is $$2\pi\sqrt{a_{\mathrm{app}}^2\cos^2\gamma+b_{\mathrm{app}}^2\sin^2\gamma}=4.62\,\mathrm{arcsec\,yr^{-1}}$$, which exceeds μ, with $\gamma=13.6^\circ$, and the fraction becomes $20.6\%$. Both values are correct and differ only in the definition of "backwards". The visual effect, shown in the animation below, is a series of loops stretched along the direction of the drift.
 
 ![Apparent trajectory of the Earth seen from Alpha Centauri](apparent_trajectory.gif)
 
 The apparent path is the projection of a real three-dimensional motion. In the frame of the Alpha Centauri system the Earth follows a helix around the straight path of the Sun. The pitch of the helix is the distance travelled by the Sun in one year,
 
-$$
-p=v_tot*1 yr=32.3 km/s*3.156x10^7 s=6.8 AU
-$$
+$$p=v_{\mathrm{tot}}\,(1\,\mathrm{yr})=32.3\,\mathrm{km\,s^{-1}}\times3.156\times10^7\,\mathrm{s}=6.8\,\mathrm{AU}$$
 
-The orbit lies in the ecliptic, and the velocity of the Sun makes an angle ψ=70.0° with the ecliptic pole. The cross-section of the helix in the plane perpendicular to the velocity is therefore not a circle but an ellipse with semi-axes 1 AU and abs(cos(ψ))AU=0.34 AU.
+The orbit lies in the ecliptic, and the velocity of the Sun makes an angle $\psi=70.0^\circ$ with the ecliptic pole. The cross-section of the helix in the plane perpendicular to the velocity is therefore not a circle but an ellipse with semi-axes $1\,\mathrm{AU}$ and $|\cos\psi|\,\mathrm{AU}=0.34\,\mathrm{AU}$.
 
-The Moon adds a small effect: the Earth also revolves around the Earth-Moon barycentre with an amplitude of 4670 km, which seen from Alpha Centauri corresponds to about 23 μas. This wobble is about 3x10^4 times smaller than the annual apparent orbit and is not measurable.
+The Moon adds a small effect: the Earth also revolves around the Earth-Moon barycentre with an amplitude of $4670\,\mathrm{km}$, which seen from Alpha Centauri corresponds to about $23\,\mu\mathrm{as}$. This wobble is about $3\times10^4$ times smaller than the annual apparent orbit and is not measurable.
 
 ## Atmospheric characterization and biosignature detection
-Finding a planet is not the same as finding life on it: a spectrum is needed, in which the absorption lines of the atmospheric gases can be read. Biosignatures are gases whose abundance is hard to explain without a biological source. The main ones for an Earth-like planet are molecular oxygen (O2), its photochemical product ozone (O3), and methane (CH4). The combinations O2+CH4 and O3+CH4 are particularly significant, because the two gases react with each other and can coexist only if both are continuously replenished (Kaltenegger 2021). Water vapour (H2O) and carbon dioxide (CO2) are not biosignatures, but they give context on the climate.
+Finding a planet is not the same as finding life on it: a spectrum is needed, in which the absorption lines of the atmospheric gases can be read. Biosignatures are gases whose abundance is hard to explain without a biological source. The main ones for an Earth-like planet are molecular oxygen ($\mathrm{O_2}$), its photochemical product ozone ($\mathrm{O_3}$), and methane ($\mathrm{CH_4}$). The combinations $\mathrm{O_2}+\mathrm{CH_4}$ and $\mathrm{O_3}+\mathrm{CH_4}$ are particularly significant, because the two gases react with each other and can coexist only if both are continuously replenished (Kaltenegger 2021). Water vapour ($\mathrm{H_2O}$) and carbon dioxide ($\mathrm{CO_2}$) are not biosignatures, but they give context on the climate.
 
-There are two ways to obtain a spectrum. The first, transmission spectroscopy, seeds a transit. During the transit the tartlight grazing the planet crosses a thin ring of atmosphere, and the gases leave their imprint on it. In an isothermal atmosphere the density decays as e^(-h/H), with scale height
+There are two ways to obtain a spectrum. The first, transmission spectroscopy, seeds a transit. During the transit the tartlight grazing the planet crosses a thin ring of atmosphere, and the gases leave their imprint on it. In an isothermal atmosphere the density decays as $e^{-h/H}$, with scale height
 
-$$
-H=k*T/(μ*m_H*g)
- =(1.38x10^-23*250)/(29*1.66x10^-27*9.8)
- ~7.3 km        (8.4 km at 288 K)
-$$
-
-where μ=29 is here the mean molecular weight of air. If an absorbing gas makes the planet look larger by an effective height Δh, the extra friction of starlight blocked is the ratio between the area of the ring and that of the stellar disc:
-
-$$
-ΔF/F=2π*R_Earth*Δh/(π*R_Sun^2)=2*R_Earth*Δh/R_Sun^2=0.0263 ppm*Δh[km]
+$$H=\frac{kT}{\mu m_{\mathrm H}g}$$
+ =$\frac{1.38\times10^{-23}\times250}{29\times1.66\times10^{-27}\times9.8}$
+ ~$\sim7.3\,\mathrm{km}$        (8.4 km at 288 K)
 $$
 
-For Δh equal to one scale height (8 km) the signal is 0.21 ppm. For the strongest O2 absorption, whose effective height is about 27 km (Bétrémieux 2013), it is about 0.7 ppm. Refraction in the lower atmosphere further prevents the deepest layers from being probed.
+where $μ=29$ is here the mean molecular weight of air. If an absorbing gas makes the planet look larger by an effective height $\Delta h$, the extra friction of starlight blocked is the ratio between the area of the ring and that of the stellar disc:
+
+ΔF/F=2π*R_Earth*Δh/(π*R_Sun^2)=2*R_Earth*Δh/R_Sun^2=0.0263 ppm*Δh[km] | `$$\frac=\frac
+
+For $\Delta h$ equal to one scale height (8 km) the signal is 0.21 ppm. For the strongest O2 absorption, whose effective height is about 27 km (Bétrémieux 2013), it is about 0.7 ppm. Refraction in the lower atmosphere further prevents the deepest layers from being probed.
 
 To see whether such a signal is within reach, an idealised estimate was made for an ELT limited only by photon noise. The flux of the Sun is about 5.8x10^12 photons/s, so one transit of 13 h collects about 2.7x10^17 photons, or about 2.7x10^16 with a total efficiency of 10%. With a spectral resolution R=10^5 over 300 nm there are about 4x10^4 resolution elements, each with a photon noise of about 1.2 ppm. Over the O2 band (about 3 nm, about 400 elements) the noise drops to about 0.06 ppm, against a signal of about 0.7 ppm, so S/N~12 per transit, if photon noise were the only noise.
 
