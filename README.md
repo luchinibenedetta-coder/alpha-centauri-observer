@@ -119,7 +119,7 @@ $$N=F_0\,10^{-0.4m}A\varepsilon t$$
 
 where $F_0\sim9\times10^5\,\mathrm{photons\,s^{-1}\,cm^{-2}}$ is the flux of a zero-magnitude star in the V band (approximate), $A$ the collecting area, $\varepsilon=0.3$ an assumed overall efficiency, and $t$ the exposure time. For a source with no background $S/N=\sqrt{N}$. The magnitude of the planet follows from its contrast through $m=m_{\odot}-2.5\log_{10}(c)$.
 
-| Object | $\m$ | HST($4.5\,\mathrm{m^2}$) | ELT ($\sim980\,\mathrm{m^2}$) |
+| Object | $m$ | HST($4.5\,\mathrm{m^2}$) | ELT ($\sim980\,\mathrm{m^2}$) |
 |---|---|---|---|
 | Sun | $0.46$ | $7.9\times10^9\,\mathrm{photons\,s^{-1}}$ | $1.7\times10^{12}\,\mathrm{photons\,s^{-1}}$ |
 | Earth, full phase | $23.6$ | $4.3\,\mathrm{photons\,s^{-1}}$ | $940\,\mathrm{photons\,s^{-1}}$ |
@@ -269,10 +269,11 @@ The second half of the question asks what path the Earth seems to follow. The an
 First, the orbit alone. A circle of radius $a$ seen from an ecliptic latitude $\beta$ is projected onto the plane of the sky as an ellipse. With $\omega=2\pi\,\mathrm{rad\,yr^{-1}}$, and the axes chosen along the long and short axis of the ellipse, the position of the Earth relative to the Sun is
 
 $$
-\beglin{aligned}
-x(t)&=a_{\mathrm{app}}\cos(omega t)\\
+\begin{aligned}
+x(t)&=a_{\mathrm{app}}\cos(\omega t)\\
 y(t)&=-b_{\mathrm{app}}\sin(\omega t)
 \end{aligned}
+$$
 
 $$
 \begin{aligned}
@@ -281,7 +282,7 @@ b_{\mathrm{app}}&=a_{\mathrm{app}}\lvert\sin\beta\rvert=0.506''
 \end{aligned}
 $$
 
-The ellipse has an axis ratio $\frac{b_{\mathrm{app}}}{a_{\mathrm{app}}}=0.68$ and is covered once a year. The minus sign in $y$ fixes the sense of rotation: on these axes the motion is clockwise, as the script confirms numerically by projecting a counter-clockwise orbit about the ecliptic pole onto the sky axes. In the ideal edge-on case $\beta=0$ the ellipse collapses into a segment of length $2a_{\mathrm{app}}=1.49''"$, along which the Earth oscillates back and forth. In the real geometry the Earth always stays between $0.506''$ and $0.747''$ from the Sun, so there is neither a transit nor an occultation.
+The ellipse has an axis ratio $\frac{b_{\mathrm{app}}}{a_{\mathrm{app}}}=0.68$ and is covered once a year. The minus sign in $y$ fixes the sense of rotation: on these axes the motion is clockwise, as the script confirms numerically by projecting a counter-clockwise orbit about the ecliptic pole onto the sky axes. In the ideal edge-on case $\beta=0$ the ellipse collapses into a segment of length $2a_{\mathrm{app}}=1.49''$, along which the Earth oscillates back and forth. In the real geometry the Earth always stays between $0.506''$ and $0.747''$ from the Sun, so there is neither a transit nor an occultation.
 
 Second, the relative motion of the two stellar systems. The total proper motion is 
 
@@ -300,7 +301,7 @@ $$
 
 The shape depends on which of the two motions is faster. Differentiating, $\frac{dx}{dt}=\mu_x-a_{\mathrm{app}}\omega\sin(\omega t)$, so the velocity along the long axis changes sign whenever the orbital speed $a_{\mathrm{app}}\omega=4.69\,\mathrm{arcsec\,yr^{-1}}$ exceeds the drift speed $\mu_x=3.58\,\mathrm{arcsec\,yr^{-1}}$, which is the case here. In those intervals the Earth appears to move backwards and the path forms loops. The fraction of the time spent in retrograde motion is
 
-$$f=\frac{1}{\pi}\acrpss\left(\frac{\mu_x}{a_{mathrm{app}}\omega}\right)=22\%$$
+$$f=\frac{1}{\pi}\arccos\left(\frac{\mu_x}{a_{\mathrm{app}}\omega}\right)=22\%$$
 
 This fraction depends on the axis along which it is measured. Measured along the direction of the drift itself, the amplitude of the apparent orbital velocity is $2\pi\sqrt{a_{\mathrm{app}}^2\cos^2\gamma+b_{\mathrm{app}}^2\sin^2\gamma}=4.62\,\mathrm{arcsec\,yr^{-1}}$, which exceeds $\mu$, with $\gamma=13.6^\circ$, and the fraction becomes $20.6\%$. Both values are correct and differ only in the definition of "backwards". The visual effect, shown in the animation below, is a series of loops stretched along the direction of the drift.
 
@@ -317,16 +318,16 @@ The Moon adds a small effect: the Earth also revolves around the Earth-Moon bary
 ## Atmospheric characterization and biosignature detection
 Finding a planet is not the same as finding life on it: a spectrum is needed, in which the absorption lines of the atmospheric gases can be read. Biosignatures are gases whose abundance is hard to explain without a biological source. The main ones for an Earth-like planet are molecular oxygen ($\mathrm{O_2}$), its photochemical product ozone ($\mathrm{O_3}$), and methane ($\mathrm{CH_4}$). The combinations $\mathrm{O_2}+\mathrm{CH_4}$ and $\mathrm{O_3}+\mathrm{CH_4}$ are particularly significant, because the two gases react with each other and can coexist only if both are continuously replenished (Kaltenegger 2021). Water vapour ($\mathrm{H_2O}$) and carbon dioxide ($\mathrm{CO_2}$) are not biosignatures, but they give context on the climate.
 
-There are two ways to obtain a spectrum. The first, transmission spectroscopy, needs a transit. During the transit the startlight grazing the planet crosses a thin ring of atmosphere, and the gases leave their imprint on it. In an isothermal atmosphere the density decays as $e^{-h/H}$, with scale height
+There are two ways to obtain a spectrum. The first, transmission spectroscopy, needs a transit. During the transit the starlight grazing the planet crosses a thin ring of atmosphere, and the gases leave their imprint on it. In an isothermal atmosphere the density decays as $e^{-h/H}$, with scale height
 
 $$
-H=\frac{kT}{\mu m_{\mathrm H}g}=\frac{1.38\times10^{23}\times250}{29\times1.66\times10^{-27}\times9.8}\approx7.3\,\mathrm{km}}
+H=\frac{kT}{\mu m_{\mathrm H}g}=\frac{1.38\times10^{-23}\times250}{29\times1.66\times10^{-27}\times9.8}\approx7.3\,\mathrm{km}
 $$
 
 where $\mu=29$ is here the mean molecular weight of air. If an absorbing gas makes the planet look larger by an effective height $\Delta h$, the extra fraction of starlight blocked is the ratio between the area of the ring and that of the stellar disc:
 
 $$
-\frac{\Delta F}{F}=\frac{2\pi R_{\oplus}\,\Delta h}{\pi R_{\odot}^2}=\frac{2R_{\oplus}\,\Delta h}{R_{\odot}^2}=0.0623\,\mathrm{ppm}\times\Delta h\,[\mathrm{km}]
+\frac{\Delta F}{F}=\frac{2\pi R_{\oplus}\,\Delta h}{\pi R_{\odot}^2}=\frac{2R_{\oplus}\,\Delta h}{R_{\odot}^2}=0.0263\,\mathrm{ppm}\times\Delta h\,[\mathrm{km}]
 $$
 
 For $\Delta h$ equal to one scale height ($7.3\,\mathrm{km}$) the signal is $0.19\,\mathrm{ppm}$. For the strongest $\mathrm{O_2}$ absorption, whose effective height is about 27 km (Bétrémieux 2013), it is about 0.7 ppm. Refraction in the lower atmosphere further prevents the deepest layers from being probed.
@@ -368,9 +369,9 @@ The Earth is resolvable, since its separation from the Sun, $747\,\mathrm{mas}$,
 
 The Moon cannot be seen. Its separation of 1.92 mas is not resolved even by the ELT, and its contrast of $1.6\times10^{-11}$ is beyond the reach of any planned instrument.
 
-The word "alignment" is physically meaningful only as a condition on the observer lying in the orbital plane, within $0.27^\circ$ of it, which has a probability of $0.47\%. The real Alpha Centauri has an ecliptic latitude of $-42.6^\circ$ and never sees a transit.
+The word "alignment" is physically meaningful only as a condition on the observer lying in the orbital plane, within $0.27^\circ$ of it, which has a probability of $0.47\%$. The real Alpha Centauri has an ecliptic latitude of $-42.6^\circ$ and never sees a transit.
 
-In the hypothetical edge-on-case the Earth is detected in about three transits ($84\,\mathrm{ppm}$, 13.1 h), while the Moon needs $126$-$504$ transits, or at least 140 through the transit timing variations.
+In the hypothetical edge-on case the Earth is detected in about three transits ($84\,\mathrm{ppm}$, 13.1 h), while the Moon needs $126$-$504$ transits, or at least 140 through the transit timing variations.
 
 The apparent trajectory of the Earth is an ellipse of $0.747''\times0.506''$ (axis ratio 0.68), covered clockwise in one year. Combined with the drift of the Sun at $3.686''\,\mathrm{yr^{-1}}$ it becomes a trochoid with loops (the Earth moves backwards for $22\%$ of the time along the long axis), and in space it is a helix of pitch $6.8\,\mathrm{AU}$.
 
