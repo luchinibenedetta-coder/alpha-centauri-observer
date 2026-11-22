@@ -108,9 +108,9 @@ Evaluated at the position of the Earth ($747\,\mathrm{mas}$) for an ideal circul
 | ELT, 550 nm | $257$ | $2.4\times10^{-9}$ | $\sim5$ |
 | ELT, 1.6 μm | $88$ | $6.0\times10^{-8}$ | $\sim10^2$ |
 
-Even a perfect large telescope therefore needs a coronagraph, an instrument that suppresses the starlight before it reaches the detector. In real instruments the limit comes from speckles, obstructions and wavefront errors rather than from ideal diffraction. To place the Earth in context, a review of adaptive optics for high-contrast imaging (arXiv:1701.00836) quotes performances of order $10^{-5}$ at $0.5''$ and $<10^{-6}$ at a few resolution elements for ground-based systems, which is treated as an order of magnitude. 
+Even a perfect large telescope therefore needs a coronagraph, an instrument that suppresses the starlight before it reaches the detector. In real instruments the limit comes from speckles, obstructions and wavefront errors rather than from ideal diffraction. To place the Earth in context, a review of adaptive optics for high-contrast imaging (Milli 2017) quotes performances of order $10^{-5}$ at $0.5''$ and $<10^{-6}$ at a few resolution elements for ground-based systems, which is treated as an order of magnitude. 
 
-The Roman Coronagraph Instrument has a $10^{-7}$ flux-ratio detection limit (5σ, single band) at $575\,\mathrm{nm}$ and $6$–$9\,\lambda/D$ for stars of $V\sim5$. Imaging an Earth twin requires $10^{-10}$ or better, which is the requirement of the HabEx study (arXiv:1809.09674), and the Habitable Worlds Observatory is expected to need a similar level.
+The Roman Coronagraph Instrument has a $10^{-7}$ flux-ratio detection limit (5σ, single band) at $575\,\mathrm{nm}$ and $6$–$9\,\lambda/D$ for stars of $V\sim5$. Imaging an Earth twin requires $10^{-10}$ or better, which is the requirement of the HabEx study (HabEx, Gaudi 2018), and the Habitable Worlds Observatory is expected to need a similar level.
 
 ## Photon flux and instrumental limitations
 A different question is whether the planet sends enough photons to be measured at all. The number of photons detected from a source of apparent magnitude $m$ is
@@ -201,7 +201,7 @@ $$
 \sigma^2=\sigma_{\mathrm{ph}}^2+\sigma_{\mathrm{star}}^2+\sigma_{\mathrm{inst}}^2
 $$
 
-The first is photon noise: if $N_{\mathrm{ph}}$ photons are collected, $\sigma_{\mathrm{ph}}=1/\sqrt{N_{\mathrm{ph}}}$. With the photon rates of the table in the section on photon flux and $6.5\,\mathrm{h}=23\,400\,\mathrm{s}$, the Sun gives $N_{\mathrm{ph}}\approx4\times10^{16}$ for the ELT and $N_{\mathrm{ph}}\approx2\times10^{14}$ for HST, hence $\sigma_{mathrm{ph}}\approx0.005\,\mathrm{ppm}$ and $\sigma_{\mathrm{ph}}\approx0.07\,\mathrm{ppm}$ respectively. The second is the intrinsic variability of the star (granulation, oscillations, spots carried by the rotation), of order $10$–$20\,\mathrm{ppm}$ (Koch 2010). The third is instrumental, the atmospheric for ground-based telescopes; it is not considered here.
+The first is photon noise: if $N_{\mathrm{ph}}$ photons are collected, $\sigma_{\mathrm{ph}}=1/\sqrt{N_{\mathrm{ph}}}$. With the photon rates of the table in the section on photon flux and $6.5\,\mathrm{h}=23\,400\,\mathrm{s}$, the Sun gives $N_{\mathrm{ph}}\approx4\times10^{16}$ for the ELT and $N_{\mathrm{ph}}\approx2\times10^{14}$ for HST, hence $\sigma_{\mathrm{ph}}\approx0.005\,\mathrm{ppm}$ and $\sigma_{\mathrm{ph}}\approx0.07\,\mathrm{ppm}$ respectively. The second is the intrinsic variability of the star (granulation, oscillations, spots carried by the rotation), of order $10$–$20\,\mathrm{ppm}$ (Koch 2010). The third is instrumental, and atmospheric for ground-based telescopes; it is not considered here.
 
 Since $\sigma_{\mathrm{ph}}\ll\sigma_{\mathrm{star}}$, the total is $\sigma\approx\sigma_{\mathrm{star}}$. The Sun is so bright that its photon noise is negligible, and what limits the measurement is the star itself. This is why a larger telescope does not simply solve the problem: it reduces $\sigma_{\mathrm{ph}}$, which was already negligible, and leaves $\sigma_{\mathrm{star}}$ unchanged.
 
@@ -209,7 +209,7 @@ The formula for the number of transits assumes white noise, that is independent 
 
 The comparison between signal and noise can be summarised for the two bodies, taking the transit depth $\delta$ and a stellar noise $\sigma=10$–$20\,\mathrm{ppm}$:
 
-| Body | Depth $\delta$ | Ratio $\delta/\sigma$ in one transit | Transit needed |
+| Body | Depth $\delta$ | Ratio $\delta/\sigma$ in one transit | Transits needed |
 | --- | --- | --- |--- |
 | Earth | $84\,\mathrm{ppm}$ | $4.2$–$8.4$ | $3$ |
 | Moon | $6.2\,\mathrm{ppm}$ | $0.31$–$0.62$ | $126$–$504$ |
@@ -338,7 +338,7 @@ The orbit lies in the ecliptic, and the velocity of the Sun makes an angle $\psi
 The Moon adds a small effect: the Earth also revolves around the Earth-Moon barycentre with an amplitude of $4670\,\mathrm{km}$, which seen from Alpha Centauri corresponds to about $23\,\mu\mathrm{as}$. This wobble is about $3\times10^4$ times smaller than the annual apparent orbit and is not measurable.
 
 ## Atmospheric characterization and biosignature detection
-Finding a planet is not the same as finding life on it: a spectrum is needed, in which the absorption lines of the atmospheric gases can be read. Biosignatures are gases whose abundance is hard to explain without a biological source. The main ones for an Earth-like planet are molecular oxygen ($\mathrm{O_2}$), its photochemical product ozone ($\mathrm{O_3}$), and methane ($\mathrm{CH_4}$). The combinations $\mathrm{O_2}+\mathrm{CH_4}$ and $\mathrm{O_3}+\mathrm{CH_4}$ are particularly significant, because the two gases react with each other and can coexist only if both are continuously replenished (Kaltenegger 2021). Water vapour ($\mathrm{H_2O}$) and carbon dioxide ($\mathrm{CO_2}$) are not biosignatures, but they give context on the climate.
+Finding a planet is not the same as finding life on it: a spectrum is needed, in which the absorption lines of the atmospheric gases can be read. Biosignatures are gases whose abundance is hard to explain without a biological source. The main ones for an Earth-like planet are molecular oxygen ($\mathrm{O_2}$), its photochemical product ozone ($\mathrm{O_3}$), and methane ($\mathrm{CH_4}$). The combinations $\mathrm{O_2}+\mathrm{CH_4}$ and $\mathrm{O_3}+\mathrm{CH_4}$ are particularly significant, because the two gases react with each other and can coexist only if both are continuously replenished (Kaltenegger & Lin 2021). Water vapour ($\mathrm{H_2O}$) and carbon dioxide ($\mathrm{CO_2}$) are not biosignatures, but they give context on the climate.
 
 There are two ways to obtain a spectrum. The first, transmission spectroscopy, needs a transit. During the transit the starlight grazing the planet crosses a thin ring of atmosphere, and the gases leave their imprint on it. In an isothermal atmosphere the density decays as $e^{-h/H}$, with scale height
 
@@ -352,7 +352,7 @@ $$
 \frac{\Delta F}{F}=\frac{2\pi R_{\oplus}\,\Delta h}{\pi R_{\odot}^2}=\frac{2R_{\oplus}\,\Delta h}{R_{\odot}^2}=0.0263\,\mathrm{ppm}\times\Delta h\,[\mathrm{km}]
 $$
 
-For $\Delta h$ equal to one scale height ($7.3\,\mathrm{km}$) the signal is $0.19\,\mathrm{ppm}$. For the strongest $\mathrm{O_2}$ absorption, whose effective height is about 27 km (Bétrémieux 2013), it is about 0.7 ppm. Refraction in the lower atmosphere further prevents the deepest layers from being probed.
+For $\Delta h$ equal to one scale height ($7.3\,\mathrm{km}$) the signal is $0.19\,\mathrm{ppm}$. For the strongest $\mathrm{O_2}$ absorption, whose effective height is about 27 km (Bétrémieux & Kaltenegger 2013), it is about 0.7 ppm. Refraction in the lower atmosphere further prevents the deepest layers from being probed.
 
 To see whether such a signal is within reach, an idealised estimate was made for an ELT limited only by photon noise. The flux of the Sun is about $5.8\times10^{12}\,\mathrm{photons\,s^{-1}}$, so one transit of 13 h collects about $2.7\times10^{17}$ photons, or about $2.7\times10^{16}$ with a total efficiency of 10%. With a spectral resolution $R=10^5$ over 300 nm there are about $4\times10^4$ resolution elements, each with a photon noise of about $1.2\,\mathrm{ppm}$. Over the $\mathrm{O_2}$ band (about 3 nm, about 400 elements) the noise drops to about $0.06\,\mathrm{ppm}$, against a signal of about 0.7 ppm, so $S/N\sim12$ per transit, if photon noise were the only noise.
 
@@ -398,3 +398,17 @@ In the hypothetical edge-on case the Earth is detected in about three transits (
 The apparent trajectory of the Earth is an ellipse of $0.747''\times0.506''$ (axis ratio 0.68), covered clockwise in one year. Combined with the drift of the Sun at $3.686''\,\mathrm{yr^{-1}}$ it becomes a trochoid with loops (the Earth moves backwards for $22\%$ of the time along the long axis), and in space it is a helix of pitch $6.8\,\mathrm{AU}$.
 
 Finally, life on Earth is detectable in principle through $\mathrm{O_2}+\mathrm{CH_4}$ and $\mathrm{O_3}$. In practice it requires a coronagraphic space telescope for reflected light or, for transmission spectroscopy, many transits observed with an ELT, which the real geometry does not allow.
+
+## References
+1. Kervella, P., Thévenin, F., Lovis, C. (2017). *Proxima's orbit around α Centauri*. Astronomy & Astrophysics 598, L7. [doi:10.1051/0004-6361/201629930](https://doi.org/10.1051/0004-6361/201629930) · [arXiv:1611.03495](https://arxiv.org/abs/1611.03495)
+2. Prša, A., et al. (2016). *Nominal Values for Selected Solar and Planetary Quantities: IAU 2015 Resolution B3*. The Astronomical Journal 152, 41. [arXiv:1605.09788](https://arxiv.org/abs/1605.09788)
+3. NASA Goddard Space Flight Center. *Moon Fact Sheet*. [nssdc.gsfc.nasa.gov](https://nssdc.gsfc.nasa.gov/planetary/factsheet/moonfact.html)
+4. Robinson, T. D. (2026). *Inferring and Interpreting the Visual Geometric Albedo and Phase Function of Earth*. The Planetary Science Journal 7, 12. [arXiv:2507.22258](https://arxiv.org/abs/2507.22258)
+5. Cox, A. N. (ed.) (2000). *Allen's Astrophysical Quantities*, 4th edition. Springer, New York. [link.springer.com](https://link.springer.com/book/10.1007/978-1-4612-1186-0)
+6. Milli, J., Mawet, D., Mouillet, D., Kasper, M., Girard, J. H. (2017). *Adaptive optics in high-contrast imaging*. [arXiv:1701.00836](https://arxiv.org/abs/1701.00836)
+7. Gaudi, B. S., Seager, S., Mennesson, B., et al. (2018). *The Habitable Exoplanet Observatory (HabEx) Mission Concept Study Interim Report*. [arXiv:1809.09674](https://arxiv.org/abs/1809.09674)
+8. Koch, D. G., et al. (2010). *Kepler Mission Design, Realized Photometric Performance, and Early Science*. The Astrophysical Journal Letters 713, L79. [doi:10.1088/2041-8205/713/2/L79](https://doi.org/10.1088/2041-8205/713/2/L79) · [arXiv:1001.0268](https://arxiv.org/abs/1001.0268)
+9. Carter, J. A., Yee, J. C., Eastman, J., Gaudi, B. S., Winn, J. N. (2008). *Analytic Approximations for Transit Light Curve Observables, Uncertainties, and Covariances*. The Astrophysical Journal 689, 499. [doi:10.1086/592321](https://doi.org/10.1086/592321) · [arXiv:0805.0238](https://arxiv.org/abs/0805.0238)
+10. Kaltenegger, L., Lin, Z. (2021). *Finding Signs of Life in Transits: High-resolution Transmission Spectra of Earth-like Planets around FGKM Host Stars*. The Astrophysical Journal Letters 909, L2. [doi:10.3847/2041-8213/abe634](https://doi.org/10.3847/2041-8213/abe634) · [arXiv:2102.12011](https://arxiv.org/abs/2102.12011)
+11. Bétrémieux, Y., Kaltenegger, L. (2013). *Transmission Spectrum of Earth as a Transiting Exoplanet from the Ultraviolet to the Near-Infrared*. The Astrophysical Journal Letters 772, L31. [arXiv:1307.0416](https://arxiv.org/abs/1307.0416)
+12. Rodler, F., López-Morales, M. (2014). *Feasibility Studies for the Detection of O₂ in an Earth-like Exoplanet*. The Astrophysical Journal 781, 54. [doi:10.1088/0004-637X/781/1/54](https://doi.org/10.1088/0004-637X/781/1/54) · [arXiv:1312.1585](https://arxiv.org/abs/1312.1585)
