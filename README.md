@@ -195,23 +195,24 @@ The Earth is detected in the minimum of three transits, because its signal is al
 A transit gives the radius ratio $\frac{R_p}{R_{\odot}}=\sqrt{\delta}=0.0092$, the period $P=1\,\mathrm{yr}$, and, from Kepler's third law $a^3=\frac{GMP^2}{4\pi^2}$, the orbital radius $a=1\,\mathrm{AU}$, hence an estimate of the equilibrium temperature. It does not give the mass of the planet or an image: the Earth is *detected*, but not *seen*.
 
 ## Noise and its sources
-Every detection discussed so far is a comparison between a signal and a noise, and the verdict depends on how the scale with the time over which the measurement is made. The quantity $\sigma$ used in the previous section os the root-mean-square fluctuation of the measured flusx, expressed in ppm, on a time scale of $6.5\,\mathrm{h}$, about half of the transit duration. Three independent contributions add in quadrature:
+Every detection discussed so far is a comparison between a signal and a noise, and the verdict depends on how the two scale with the time over which the measurement is made. The quantity $\sigma$ used in the previous section is the root-mean-square fluctuation of the measured flux, expressed in ppm, on a time scale of $6.5\,\mathrm{h}$, about half of the transit duration. Three independent contributions add in quadrature:
 
 $$
-\sigma^2=\sigma_{\mathrm{ph}}^2+\sigma_{mathrm{star}}^2+\sigma_{\mathrm{inst}}^2
+\sigma^2=\sigma_{\mathrm{ph}}^2+\sigma_{\mathrm{star}}^2+\sigma_{\mathrm{inst}}^2
 $$
 
-The first is photon noise: if $N_{\mathrm{ph}}$ photons are collected, $\sigma_{\mathrm{ph}}=1/\sqrt{N_{\mathrm{ph}}}$. With the photon rates of the table in the section on photon flux is $6.5\,\mathrm{h}=23\,400\,\mathrm{s}$, the Sun gives $N_{\mathrm{ph}}\approx2\times10^{14}$ for HST, hence $\sigma_{mathrm{ph}}\approx0.005\,\mathrm{ppm}$ and $\sigma_{\mathrm{ph}}\approx0.07\,\mathrm{ppm}$ respectively. The second is the intrinsic variability of the star (granulation, oscillations, spots carried by the rotation), of order $10$-$20\,\mathrm{ppm}$ (Koch 2010). The third is instrumental, the atmospheric for ground-based telescopes; it is not considered here.
+The first is photon noise: if $N_{\mathrm{ph}}$ photons are collected, $\sigma_{\mathrm{ph}}=1/\sqrt{N_{\mathrm{ph}}}$. With the photon rates of the table in the section on photon flux and $6.5\,\mathrm{h}=23\,400\,\mathrm{s}$, the Sun gives $N_{\mathrm{ph}}\approx4\times10^{16}$ for the ELT and $N_{\mathrm{ph}}\approx2\times10^{14}$ for HST, hence $\sigma_{mathrm{ph}}\approx0.005\,\mathrm{ppm}$ and $\sigma_{\mathrm{ph}}\approx0.07\,\mathrm{ppm}$ respectively. The second is the intrinsic variability of the star (granulation, oscillations, spots carried by the rotation), of order $10$–$20\,\mathrm{ppm}$ (Koch 2010). The third is instrumental, the atmospheric for ground-based telescopes; it is not considered here.
 
-Since $\sigma_{\mathrm{ph}}\II\sigma_{\mathrm{star}}$, the total is $\sigma\approx\sigma_{\mathrm{star}}$. The Sun is so bright that its photon noise is negligible, and what limits the measurement is the star itself. This is why a larger telescope does not simply solve the problem: it reduces $\sigma_{\mathrm{ph}}$, which was already negligible and leaves $\sigma_{\mathrm{star}}$ unchanged.
+Since $\sigma_{\mathrm{ph}}\ll\sigma_{\mathrm{star}}$, the total is $\sigma\approx\sigma_{\mathrm{star}}$. The Sun is so bright that its photon noise is negligible, and what limits the measurement is the star itself. This is why a larger telescope does not simply solve the problem: it reduces $\sigma_{\mathrm{ph}}$, which was already negligible, and leaves $\sigma_{\mathrm{star}}$ unchanged.
 
 The formula for the number of transits assumes white noise, that is independent measurements, for which stacking $N$ transits reduces the noise as $\sigma/\sqrt{N}$. Stellar variability is instead correlated in time, on scales of hours to days comparable with the $13\,\mathrm{h}$ transit, so the improvement is slower than $1/\sqrt{N}$ and the numbers of the table are in this respect optimistic. This partly compensates the conservative choice of referring $\sigma$ to $6.5\,\mathrm{h}$, and neither effect was quantified here.
 
-The comparison between signal and noise can be summarised for the two bodies, taking the transit depth $\delta$ and a stellar noise $\sigma=10$-$20\,\mathrm{ppm}$:
+The comparison between signal and noise can be summarised for the two bodies, taking the transit depth $\delta$ and a stellar noise $\sigma=10$–$20\,\mathrm{ppm}$:
+
 | Body | Depth $\delta$ | Ratio $\delta/\sigma$ in one transit | Transit needed |
 | --- | --- | --- |--- |
-| Earth | $84\,\mathrm{ppm}$ | $4.2$-$8.4$ | $3$ |
-| Moon | $6.2\,\mathrm{ppm}$ | $0.31$-$0.62$ | $126$-$504$ |
+| Earth | $84\,\mathrm{ppm}$ | $4.2$–$8.4$ | $3$ |
+| Moon | $6.2\,\mathrm{ppm}$ | $0.31$–$0.62$ | $126$–$504$ |
 
 The Earth stands above the noise already in a single transit, and the three transits are only needed to confirm the period. The Moon stands below it, and can emerge only by stacking hundreds of transits. The photon budget is not the obstacle here either: the limit is the intrinsic variability of the star.
 
@@ -367,9 +368,9 @@ All the results above rest on a set of assumptions, listed here to show how far 
 | Assumption | Value | Effect of a change |
 |---|---|---|
 | Observer position | Alpha Centauri barycentre values | A and B differ by tens of AU out of $2.76\times10^5\,\mathrm{AU}$; the distance of A alone differs by $0.5\%$ |
-| Albedo | Earth $0.242$-$0.367$, Moon 0.12 | the contrast is proportional to $A_g$; a factor $2$ does not change the verdict (three orders of magnitude) |
+| Albedo | Earth $0.242$–$0.367$, Moon 0.12 | the contrast is proportional to $A_g$; a factor $2$ does not change the verdict (three orders of magnitude) |
 | Phase function | Lambert | the real Earth deviates from Lambert's law; the effect was not quantified here |
-| Stellar noise | $10$-$20\,\mathrm{ppm}$ per $6.5\,\mathrm{h}$ | order of magnitude; at 5 ppm the Earth needs 1-2 transits, the Moon remains out of reach |
+| Stellar noise | $10$–$20\,\mathrm{ppm}$ per $6.5\,\mathrm{h}$ | order of magnitude; at 5 ppm the Earth needs 1-2 transits, the Moon remains out of reach |
 | Instrument contrasts | $10^{-5}$ to $10^{-6}$; $10^{-7}$; $10^{-10}$ | orders of magnitude; requirements and design goals, not measured performance |
 | Orbits | circular | the Earth's eccentricity (0.017) changes the figures by a few percent |
 | Relative motion | uniform and rectilinear | gravitational acceleration is negligible over a few years |
@@ -392,7 +393,7 @@ The Moon cannot be seen. Its separation of 1.92 mas is not resolved even by the 
 
 The word "alignment" is physically meaningful only as a condition on the observer lying in the orbital plane, within $0.27^\circ$ of it, which has a probability of $0.47\%$. The real Alpha Centauri has an ecliptic latitude of $-42.6^\circ$ and never sees a transit.
 
-In the hypothetical edge-on case the Earth is detected in about three transits ($84\,\mathrm{ppm}$, 13.1 h), while the Moon needs $126$-$504$ transits, or at least 140 through the transit timing variations.
+In the hypothetical edge-on case the Earth is detected in about three transits ($84\,\mathrm{ppm}$, 13.1 h), while the Moon needs $126$–$504$ transits, or at least 140 through the transit timing variations.
 
 The apparent trajectory of the Earth is an ellipse of $0.747''\times0.506''$ (axis ratio 0.68), covered clockwise in one year. Combined with the drift of the Sun at $3.686''\,\mathrm{yr^{-1}}$ it becomes a trochoid with loops (the Earth moves backwards for $22\%$ of the time along the long axis), and in space it is a helix of pitch $6.8\,\mathrm{AU}$.
 
